@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Балтика Brew - крафтовая пивоварня. Познакомьтесь с нашими уникальными сортами пива: Анти-Лагер Кёльш, Техно IPA, Аэронавт Бланш и другие.">
+<meta property="og:title" content="Балтика Brew - Крафтовая пивоварня">
+<meta property="og:description" content="Крафтовое пиво высокого качества. Регулярные и лимитанные линейки продукции.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/header/logo.png">
+<link rel="icon" type="image/png" href="images/header/logo.png">
+<title>Балтика Brew</title>
+<link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/tt-backwardssans-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/TTTricks-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles-mobile.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="page">
+
+    <!-- ================= HEADER ================= -->
+    <header class="header" id="home">
+        <div class="container">
+            <!-- Desktop Navigation -->
+            <div class="header__nav-bar header__nav-bar--desktop">
+                <nav class="header__links">
+                    <a href="#assortment" class="header__link">Ассортимент</a>
+                    <a href="#about" class="header__link">О нас</a>
+                    <a href="#news" class="header__link">Новости</a>
+                </nav>
+
+                <a href="#home">
+                    <img src="images/header/logo.png" alt="Логотип" class="header__logo">
+                </a>
+
+                <nav class="header__links">
+                    <a href="#faq" class="header__link">Ответы на вопросы</a>
+                    <a href="#author" class="header__link">Слово автора</a>
+                    <div class="header__lang">
+                        <a href="#" class="header__lang-link header__lang-link--active">RU</a>
+                        <a href="#" class="header__lang-link">EN</a>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="header__nav-bar header__nav-bar--mobile">
+                <div class="header__lang header__lang--mobile">
+                    <a href="#" class="header__lang-link header__lang-link--active">RU</a>
+                    <a href="#" class="header__lang-link">EN</a>
+                </div>
+
+                <a href="#home">
+                    <img src="images/header/logo-mobile.png" alt="Логотип" class="header__logo header__logo--mobile">
+                </a>
+
+                <button class="header__burger" aria-label="Открыть меню">
+                    <img src="images/header/menu-icon.svg" alt="" class="header__burger-icon">
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav class="header__mobile-menu">
+            <div class="container">
+                <a href="#assortment" class="header__mobile-link">Ассортимент</a>
+                <a href="#about" class="header__mobile-link">О нас</a>
+                <a href="#news" class="header__mobile-link">Новости</a>
+                <a href="#faq" class="header__mobile-link">Ответы на вопросы</a>
+                <a href="#author" class="header__mobile-link">Слово автора</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <div class="hero">
+        <img src="images/header/hero-bg.png" alt="Балтика Brew" class="hero__bg">
+    </div>
+
+    <!-- ================= PRODUCT ================= -->
+    <section class="section product" id="assortment">
+        <div class="product__lines">
+        <div class="product__line-group product__line-group--active" data-line="1">
+        <div class="product__slides">
+            <div class="product__slide product__slide--active" data-slide="1">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/product/line-1/anti-lager-mobile.png">
+                    <img src="images/product/line-1/anti-lager.png" alt="Пневмо-Сидр полусухой" class="product__bg">
+                </picture>
+                <div class="container">
+                    <div class="product__info">
+                        <h1 class="product__title">АНТИ-ЛАГЕР КЁЛЬШ</h1>
+                        <p class="product__description">
+                            Кёльш – гибридный стиль: светлый эль с солодовым вкусом, оттенками фруктовой сладости и мягкими пшеничными полутонами, стремящийся быть похожим на лагер, оставаясь при этом элем. Одним словом: Анти-лагер.
+                        </p>
+                        <div class="product__stats">
+                            <div class="product__stat product__stat--density">
+                                <span class="product__stat-value">12,7 %</span>
+                                <span class="product__stat-label">Плотность</span>
+                            </div>
+                            <div class="product__stat product__stat--ibu">
+                                <span class="product__stat-value">23</span>
+                                <span class="product__stat-label">IBU</span>
+                            </div>
+                            <div class="product__stat product__stat--alcohol">
+                                <span class="product__stat-value">5,3 %</span>
+                                <span class="product__stat-label">Алкоголь</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product__slide" data-slide="2">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/product/line-1/techno-ipa-mobile.png">
+                    <img src="images/product/line-1/techno-ipa.png" alt="ТЕХНО IPA" class="product__bg">
+                </picture>
+                <div class="container">
+                    <div class="product__info">
+                        <h1 class="product__title">ТЕХНО IPA</h1>
+                        <p class="product__description">
+             В этом IPA мы соединили индустриальные традиции викторианской эпохи с триумфом современных хмелевых технологий.
+
+Хмелевая горечь ощущается легкими электрическими покалываниями на языке.  Яркий хвойно-цитрусовый аромат словно разряд  пробуждает ваши рецепторы.
+                        </p>
+                        <div class="product__stats">
+                            <div class="product__stat product__stat--density">
+                                <span class="product__stat-value">12,7 %</span>
+                                <span class="product__stat-label">Плотность</span>
+                            </div>
+                            <div class="product__stat product__stat--ibu">
+                                <span class="product__stat-value">23</span>
+                                <span class="product__stat-label">IBU</span>
+                            </div>
+                            <div class="product__stat product__stat--alcohol">
+                                <span class="product__stat-value">5,3 %</span>
+                                <span class="product__stat-label">Алкоголь</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product__slide" data-slide="3">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/product/line-1/blansh-mobile.png">
+                    <img src="images/product/line-1/blansh.png" alt="АЭРОНАВТ БЛАНШ" class="product__bg">
+                </picture>
+                <div class="container">
+                    <div class="product__info">
+                        <h1 class="product__title">АЭРОНАВТ БЛАНШ</h1>
+                        <p class="product__description">
+             Попробуйте изысканный пшеничный напиток, доведенный до совершенства в нашей лаборатории. Мы взяли за основу проверенный временем подход к стилю  "Бланш" и вывернули тумблер на полную мощность. Пышный, как облако, и освежающий, как дуновение цитрусово-кориандрового вихря.
+                        </p>
+                        <div class="product__stats">
+                            <div class="product__stat product__stat--density">
+                                <span class="product__stat-value">12,7 %</span>
+                                <span class="product__stat-label">Плотность</span>
+                            </div>
+                            <div class="product__stat product__stat--ibu">
+                                <span class="product__stat-value">23</span>
+                                <span class="product__stat-label">IBU</span>
+                            </div>
+                            <div class="product__stat product__stat--alcohol">
+                                <span class="product__stat-value">5,3 %</span>
+                                <span class="product__stat-label">Алкоголь</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product__slide" data-slide="4">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/product/line-1/krik-mobile.png">
+                    <img src="images/product/line-1/krik.png" alt="ЗАВОДНОЙ КРИК" class="product__bg">
+                </picture>
+                <div class="container">
+                    <div class="product__info">
+                        <h1 class="product__title">ЗАВОДНОЙ КРИК</h1>
+                        <p class="product__description">
+Настоящая магия начинается, когда мы добавляем в наш ламбик натуральный сок вишни.
+Кислые, сладкие и терпкие ноты этого рубинового эля идеально гармонизируют друга друга, образуя эталонную формулу стиля.
+Никакого сахара – лишь щепотка волшебства.
+                        </p>
+                        <div class="product__stats">
+                            <div class="product__stat product__stat--density">
+                                <span class="product__stat-value">12,7 %</span>
+                                <span class="product__stat-label">Плотность</span>
+                            </div>
+                            <div class="product__stat product__stat--ibu">
+                                <span class="product__stat-value">23</span>
+                                <span class="product__stat-label">IBU</span>
+                            </div>
+                            <div class="product__stat product__stat--alcohol">
+                                <span class="product__stat-value">5,3 %</span>
+                                <span class="product__stat-label">Алкоголь</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product__slide" data-slide="5">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/product/line-1/sidr-mobile.png">
+                    <img src="images/product/line-1/sidr.png" alt="Пневмо-Сидр полусухой" class="product__bg">
+                </picture>
+                <div class="container">
+                    <div class="product__info">
+                        <h1 class="product__title">ПНЕВМО-СИДР ПОЛУСУХОЙ</h1>
+                        <p class="product__description">
+        Внутри наших медных варочных чанов яблочный сок, добытый механическими усилиями пневомашин, превращается в искристый полусухой сидр. Баланс фруктовой сладости и освежающей приятной кислинки в нём выверен с инженерной точностью. И никакого сахара – лишь щепотка волшебства.
+                        </p>
+                        <div class="product__stats">
+                            <div class="product__stat product__stat--density">
+                                <span class="product__stat-value">12,7 %</span>
+                                <span class="product__stat-label">Плотность</span>
+                            </div>
+                            <div class="product__stat product__stat--ibu">
+                                <span class="product__stat-value">23</span>
+                                <span class="product__stat-label">IBU</span>
+                            </div>
+                            <div class="product__stat product__stat--alcohol">
+                                <span class="product__stat-value">5,3 %</span>
+                                <span class="product__stat-label">Алкоголь</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="product__line-group" data-line="2">
+        <div class="product__slides">
+            <div class="product__slide product__slide--active" data-slide="1">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/product/line-2/anti-lager-mobile.png">
+                    <img src="images/product/line-2/anti-lager.png" alt="АНТИ-ЛАГЕР КЁЛЬШ (лимит)" class="product__bg">
+                </picture>
+                <div class="container">
+                    <div class="product__info">
+                        <h1 class="product__title">АНТИ-ЛАГЕР КЁЛЬШ</h1>
+                        <p class="product__description">
+                            лимит версия. Кёльш – гибридный стиль: светлый эль с солодовым вкусом, оттенками фруктовой сладости и мягкими пшеничными полутонами, стремящийся быть похожим на лагер, оставаясь при этом элем. Одним словом: Анти-лагер.
+                        </p>
+                        <div class="product__stats">
+                            <div class="product__stat product__stat--density">
+                                <span class="product__stat-value">12,7 %</span>
+                                <span class="product__stat-label">Плотность</span>
+                            </div>
+                            <div class="product__stat product__stat--ibu">
+                                <span class="product__stat-value">23</span>
+                                <span class="product__stat-label">IBU</span>
+                            </div>
+                            <div class="product__stat product__stat--alcohol">
+                                <span class="product__stat-value">5,3 %</span>
+                                <span class="product__stat-label">Алкоголь</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product__slide" data-slide="2">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/product/line-2/techno-ipa-mobile.png">
+                    <img src="images/product/line-2/techno-ipa.png" alt="ТЕХНО IPA (лимит)" class="product__bg">
+                </picture>
+                <div class="container">
+                    <div class="product__info">
+                        <h1 class="product__title">ТЕХНО IPA</h1>
+                        <p class="product__description">
+                            лимит версия. В этом IPA мы соединили индустриальные традиции викторианской эпохи с триумфом современных хмелевых технологий. Хмелевая горечь ощущается легкими электрическими покалываниями на языке. Яркий хвойно-цитрусовый аромат словно разряд пробуждает ваши рецепторы.
+                        </p>
+                        <div class="product__stats">
+                            <div class="product__stat product__stat--density">
+                                <span class="product__stat-value">12,7 %</span>
+                                <span class="product__stat-label">Плотность</span>
+                            </div>
+                            <div class="product__stat product__stat--ibu">
+                                <span class="product__stat-value">23</span>
+                                <span class="product__stat-label">IBU</span>
+                            </div>
+                            <div class="product__stat product__stat--alcohol">
+                                <span class="product__stat-value">5,3 %</span>
+                                <span class="product__stat-label">Алкоголь</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product__slide" data-slide="3">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/product/line-2/blansh-mobile.png">
+                    <img src="images/product/line-2/blansh.png" alt="АЭРОНАВТ БЛАНШ (лимит)" class="product__bg">
+                </picture>
+                <div class="container">
+                    <div class="product__info">
+                        <h1 class="product__title">АЭРОНАВТ БЛАНШ</h1>
+                        <p class="product__description">
+                            лимит версия. Попробуйте изысканный пшеничный напиток, доведенный до совершенства в нашей лаборатории. Мы взяли за основу проверенный временем подход к стилю "Бланш" и вывернули тумблер на полную мощность. Пышный, как облако, и освежающий, как дуновение цитрусово-кориандрового вихря.
+                        </p>
+                        <div class="product__stats">
+                            <div class="product__stat product__stat--density">
+                                <span class="product__stat-value">12,7 %</span>
+                                <span class="product__stat-label">Плотность</span>
+                            </div>
+                            <div class="product__stat product__stat--ibu">
+                                <span class="product__stat-value">23</span>
+                                <span class="product__stat-label">IBU</span>
+                            </div>
+                            <div class="product__stat product__stat--alcohol">
+                                <span class="product__stat-value">5,3 %</span>
+                                <span class="product__stat-label">Алкоголь</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product__slide" data-slide="4">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/product/line-2/krik-mobile.png">
+                    <img src="images/product/line-2/krik.png" alt="ЗАВОДНОЙ КРИК (лимит)" class="product__bg">
+                </picture>
+                <div class="container">
+                    <div class="product__info">
+                        <h1 class="product__title">ЗАВОДНОЙ КРИК</h1>
+                        <p class="product__description">
+                            лимит версия. Настоящая магия начинается, когда мы добавляем в наш ламбик натуральный сок вишни. Кислые, сладкие и терпкие ноты этого рубинового эля идеально гармонизируют друг друга, образуя эталонную формулу стиля. Никакого сахара – лишь щепотка волшебства.
+                        </p>
+                        <div class="product__stats">
+                            <div class="product__stat product__stat--density">
+                                <span class="product__stat-value">12,7 %</span>
+                                <span class="product__stat-label">Плотность</span>
+                            </div>
+                            <div class="product__stat product__stat--ibu">
+                                <span class="product__stat-value">23</span>
+                                <span class="product__stat-label">IBU</span>
+                            </div>
+                            <div class="product__stat product__stat--alcohol">
+                                <span class="product__stat-value">5,3 %</span>
+                                <span class="product__stat-label">Алкоголь</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product__slide" data-slide="5">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/product/line-2/sidr-mobile.png">
+                    <img src="images/product/line-2/sidr.png" alt="Пневмо-Сидр полусухой (лимит)" class="product__bg">
+                </picture>
+                <div class="container">
+                    <div class="product__info">
+                        <h1 class="product__title">ПНЕВМО-СИДР ПОЛУСУХОЙ</h1>
+                        <p class="product__description">
+                            лимит версия. Внутри наших медных варочных чанов яблочный сок, добытый механическими усилиями пневомашин, превращается в искристый полусухой сидр. Баланс фруктовой сладости и освежающей приятной кислинки в нём выверен с инженерной точностью. И никакого сахара – лишь щепотка волшебства.
+                        </p>
+                        <div class="product__stats">
+                            <div class="product__stat product__stat--density">
+                                <span class="product__stat-value">12,7 %</span>
+                                <span class="product__stat-label">Плотность</span>
+                            </div>
+                            <div class="product__stat product__stat--ibu">
+                                <span class="product__stat-value">23</span>
+                                <span class="product__stat-label">IBU</span>
+                            </div>
+                            <div class="product__stat product__stat--alcohol">
+                                <span class="product__stat-value">5,3 %</span>
+                                <span class="product__stat-label">Алкоголь</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="product__line-badge product__line-badge--active" data-line-badge="1">
+            <img src="images/background-line.png" alt="Линейка" class="product__line-badge-img">
+            <p class="product__line-label">Линейка</p>
+            <p class="product__line-kind">регулярная</p>
+            <button type="button" class="product__line-dot product__line-dot--left" aria-label="Предыдущая линейка">
+                <img src="images/product/left-arrow.png" alt="">
+            </button>
+            <button type="button" class="product__line-dot product__line-dot--right" aria-label="Следующая линейка">
+                <img src="images/right-arrow.png" alt="">
+            </button>
+        </div>
+
+        <div class="product__line-badge" data-line-badge="2">
+            <img src="images/background-line.png" alt="Линейка" class="product__line-badge-img">
+            <p class="product__line-label">Линейка</p>
+            <p class="product__line-kind">лимит</p>
+            <button type="button" class="product__line-dot product__line-dot--left" aria-label="Предыдущая линейка">
+                <img src="images/product/left-arrow.png" alt="">
+            </button>
+            <button type="button" class="product__line-dot product__line-dot--right" aria-label="Следующая линейка">
+                <img src="images/right-arrow.png" alt="">
+            </button>
+        </div>
+
+        <div class="product__badges">
+            <button type="button" class="product__badge-btn product__badge-btn--prev" aria-label="Предыдущий продукт">
+                <img src="images/product/left-arrow.png" alt="" class="product__badge">
+            </button>
+            <button type="button" class="product__badge-btn product__badge-btn--next" aria-label="Следующий продукт">
+                <img src="images/right-arrow.png" alt="" class="product__badge">
+            </button>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT / HISTORY ================= -->
+    <section class="section about" id="about">
+        <img src="images/about/bg.png" alt="" class="about__bg">
+
+        <h2 class="about__title gold-title">О нас</h2>
+
+        <button type="button" class="about__card" data-tab="breweries" data-pos="left">
+            <p class="about__card-label">Наши пивовары</p>
+        </button>
+
+        <button type="button" class="about__card" data-tab="history" data-pos="center">
+            <p class="about__card-label">История</p>
+        </button>
+
+        <button type="button" class="about__card" data-tab="breweries-list" data-pos="right">
+            <p class="about__card-label">Наши пивоварни</p>
+        </button>
+
+        <div class="about__content">
+            <div class="about__panel" data-panel="breweries">
+                <div class="about__brewers">
+                    <button type="button" class="about__brewers-arrow about__brewers-arrow--prev" aria-label="Предыдущий пивовар">
+                        <img src="images/product/left-arrow.png" alt="">
+                    </button>
+
+                    <div class="about__brewers-slides">
+                        <div class="about__brewers-slide about__brewers-slide--active" data-brewer-slide="1">
+                            <img src="images/illustration.png" alt="Наши пивовары" class="about__brewers-image">
+                            <h3 class="about__content-title">Наши пивовары</h3>
+                            <p class="about__content-text">
+                                Здесь будет рассказ о людях, которые варят наше пиво — их подход, философия
+                                и то, что делает каждую партию особенной.
+                            </p>
+                        </div>
+                        <div class="about__brewers-slide" data-brewer-slide="2">
+                            <img src="images/illustration.png" alt="Наши пивовары" class="about__brewers-image">
+                            <h3 class="about__content-title">Наши пивовары</h3>
+                            <p class="about__content-text">
+                                Здесь будет рассказ о втором пивоваре — его опыт, награды
+                                и вклад в развитие пивоварни.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button type="button" class="about__brewers-arrow about__brewers-arrow--next" aria-label="Следующий пивовар">
+                        <img src="images/right-arrow.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="about__panel about__panel--active" data-panel="history">
+                <h3 class="about__content-title">Название пивоварни</h3>
+                <div class="about__timeline-text" data-year="dec2010">
+                    <p class="about__content-text">
+                        Здесь будет история о декабре 2010 года — важной точке в развитии пивоварни.
+                    </p>
+                </div>
+                <div class="about__timeline-text" data-year="may2011">
+                    <p class="about__content-text">
+                        Здесь будет история о мае 2011 года — новом этапе развития пивоварни.
+                    </p>
+                </div>
+                <div class="about__timeline-text" data-year="jun2011">
+                    <p class="about__content-text">
+                        Здесь будет история об июне 2011 года и событиях этого периода.
+                    </p>
+                </div>
+                                <div class="about__timeline-text about__timeline-text--active" data-year="dec2011">
+                    <p class="about__content-text">
+                        В декабре 2010 года был сварен первый шоколадный стаут - Old New Year Chocolate Stout совместно с Дейвом Кларком (Tetley's) и Евгением Толстовым (Victory Art). Этот момент стал важной вехой в истории пивоварни и определил её дальнейшее развитие в направлении крафтового пива.
+                    </p>
+                </div>
+                <div class="about__timeline-text" data-year="apr2012">
+                    <p class="about__content-text">
+                        Здесь будет история об апреле 2012 года и достижениях этого периода.
+                    </p>
+                </div>
+                <div class="about__timeline-text" data-year="aug2012">
+                    <p class="about__content-text">
+                        Здесь будет история об августе 2012 года — очередной вехе пивоварни.
+                    </p>
+                </div>
+            </div>
+            <div class="about__panel" data-panel="breweries-list">
+                <h3 class="about__content-title">Наши пивоварни</h3>
+                <p class="about__content-text">
+                    Здесь будет список и описание пивоварен, где создаётся наш продукт — их география
+                    и особенности производства.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline timeline--visible">
+            <img src="images/about/timeline-progress.png" alt="" class="timeline__track">
+
+            <button type="button" class="timeline__item timeline__item--dec2010" data-year="dec2010">
+                <img src="images/about/timeline-dot.png" alt="" class="timeline__dot">
+                <span class="timeline__date">декабрь 2010</span>
+            </button>
+            <button type="button" class="timeline__item timeline__item--may2011" data-year="may2011">
+                <img src="images/about/timeline-dot.png" alt="" class="timeline__dot">
+                <span class="timeline__date">май 2011</span>
+            </button>
+            <button type="button" class="timeline__item timeline__item--jun2011" data-year="jun2011">
+                <img src="images/about/timeline-dot.png" alt="" class="timeline__dot">
+                <span class="timeline__date">июнь 2011</span>
+            </button>
+            <button type="button" class="timeline__item timeline__item--dec2011 timeline__item--active" data-year="dec2011">
+                <img src="images/about/timeline-dot-active.png" alt="" class="timeline__dot">
+                <span class="timeline__date">декабрь 2011</span>
+            </button>
+            <button type="button" class="timeline__item timeline__item--apr2012" data-year="apr2012">
+                <img src="images/about/timeline-dot.png" alt="" class="timeline__dot">
+                <span class="timeline__date">апрель 2012</span>
+            </button>
+            <button type="button" class="timeline__item timeline__item--aug2012" data-year="aug2012">
+                <img src="images/about/timeline-dot.png" alt="" class="timeline__dot">
+                <span class="timeline__date">август 2012</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ================= NEWS ================= -->
+    <section class="section news" id="news">
+        <img src="images/news/bg.png" alt="" class="news__bg">
+
+        <h2 class="news__title gold-title">новости</h2>
+
+        <div class="container">
+            <p class="news__date">22.08.2026</p>
+            <h3 class="news__headline">С ДНЁМ ГОРОДА, КАЛИНИНГРАД</h3>
+            <p class="news__text">
+Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску...Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску...Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален!
+Для нас большая честь представлять и прославлять Калининград и Калининградску..Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску....Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску...Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску...Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску..Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску....
+            </p>
+            <a href="news.html" class="news__more">подробнее</a>
+        </div>
+    </section>
+
+    <!-- ================= VIDEO ================= -->
+    <section class="section video">
+        <img src="images/video/bg.png" alt="" class="video__bg">
+
+        <div class="container">
+            <h3 class="video__title">Название видео</h3>
+
+            <div class="video__frame">
+                <iframe src="https://vkvideo.ru/video_ext.php?oid=-206889227&id=456240392&hash=fbe8cad821c65ff9&hd=3" width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <p class="video__description">
+                Возможно короткое описание<br>
+                Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален!
+                Для нас большая честь представлять и прославлять Калининград и Калининградскую область.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= AUTHOR ================= -->
+    <section class="section author" id="author">
+        <img src="images/author/bg.png" alt="" class="author__bg">
+
+        <h2 class="author__title gold-title">Слово автора</h2>
+
+        <div class="container">
+            <h3 class="author__heading">С ДНЁМ ГОРОДА, КАЛИНИНГРАД</h3>
+            <p class="author__text">
+каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску...Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску...Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален!каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску...Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску...Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален!каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску...Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску...Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален!каждый город по-своему уникален! Для нас большая честь представлять и прославлять Калининград и Калининградску...Эта цифра — отражение большой истории нашей уютной области, где каждый город по-своему уникален!
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer" id="faq">
+        <div class="footer__partners">
+            <div class="footer__partners-track">
+                <img src="images/partner/hoff.png" alt="Hoff" class="footer__partner-logo">
+                <img src="images/partner/magnit-plus.png" alt="Магнит плюс" class="footer__partner-logo">
+                <img src="images/partner/vkusvill.png" alt="ВкусВилл" class="footer__partner-logo">
+                <img src="images/partner/lenta-pro.png" alt="Лента про" class="footer__partner-logo">
+                <img src="images/partner/magnit-sign.png" alt="Магнит" class="footer__partner-logo">
+                <img src="images/partner/okolo.png" alt="ОКОЛО маркет" class="footer__partner-logo">
+                <img src="images/partner/hoff.png" alt="Hoff" class="footer__partner-logo">
+                <img src="images/partner/magnit-plus.png" alt="Магнит плюс" class="footer__partner-logo">
+                <img src="images/partner/vkusvill.png" alt="ВкусВилл" class="footer__partner-logo">
+                <img src="images/partner/lenta-pro.png" alt="Лента про" class="footer__partner-logo">
+                <img src="images/partner/magnit-sign.png" alt="Магнит" class="footer__partner-logo">
+                <img src="images/partner/okolo.png" alt="ОКОЛО маркет" class="footer__partner-logo">
+                <img src="images/partner/hoff.png" alt="Hoff" class="footer__partner-logo">
+                <img src="images/partner/magnit-plus.png" alt="Магнит плюс" class="footer__partner-logo">
+                <img src="images/partner/vkusvill.png" alt="ВкусВилл" class="footer__partner-logo">
+                <img src="images/partner/lenta-pro.png" alt="Лента про" class="footer__partner-logo">
+                <img src="images/partner/magnit-sign.png" alt="Магнит" class="footer__partner-logo">
+                <img src="images/partner/okolo.png" alt="ОКОЛО маркет" class="footer__partner-logo">
+                <img src="images/partner/hoff.png" alt="Hoff" class="footer__partner-logo">
+                <img src="images/partner/magnit-plus.png" alt="Магнит плюс" class="footer__partner-logo">
+                <img src="images/partner/vkusvill.png" alt="ВкусВилл" class="footer__partner-logo">
+                <img src="images/partner/lenta-pro.png" alt="Лента про" class="footer__partner-logo">
+                <img src="images/partner/magnit-sign.png" alt="Магнит" class="footer__partner-logo">
+                <img src="images/partner/okolo.png" alt="ОКОЛО маркет" class="footer__partner-logo">
+            </div>
+        </div>
+
+        <div class="footer__content container">
+            <div class="footer__row">
+                <div class="footer__brand">
+                    <div class="footer__socials">
+                        <a href="#" aria-label="Telegram"><img src="images/telegram.png" alt="Telegram" class="footer__social-icon"></a>
+                        <a href="#" aria-label="Viber"><img src="images/Viber.png" alt="Viber" class="footer__social-icon"></a>
+                    </div>
+                    <span class="footer__company-name">ООО «Балтика Brew»</span>
+                </div>
+
+                <div class="footer__contact">
+                    <span class="footer__contact-label">Свяжитесь с нами</span>
+                    <div class="footer__socials">
+                        <a href="#" aria-label="Outlook"><img src="images/outlook.png" alt="Outlook" class="footer__social-icon"></a>
+                        <a href="#" aria-label="Яндекс"><img src="images/yandex.png" alt="Яндекс" class="footer__social-icon"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom-row">
+                <div class="footer__links">
+                    <a href="#" class="footer__link">Политика конфиденциальности</a>
+                    <a href="#" class="footer__link">Подписаться на новости</a>
+                </div>
+                <span class="footer__age">Возрастное ограничение 18+</span>
+            </div>
+        </div>
+    </footer>
+
+</div>
+</body>
+</html>
