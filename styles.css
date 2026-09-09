@@ -1394,6 +1394,7 @@ body {
     height: auto;
     min-height: 600px;
     padding: 80px 0 60px;
+    background: url(images/news/new-section-mobile-bg.png) center / cover no-repeat;
 }
 
 @media (min-width: 768px) {
@@ -1406,8 +1407,6 @@ body {
 @media (min-width: 1440px) {
     .news {
         width: 1440px;
-        height: 941px;
-        padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1443,10 +1442,6 @@ body {
 
 @media (min-width: 1440px) {
     .news__title {
-        position: absolute;
-        top: 140px;
-        left: 50%;
-        transform: translateX(-50%);
         font-size: 60px;
         margin-bottom: 0;
         z-index: 2;
@@ -2289,7 +2284,7 @@ body {
     .news .container {
         position: relative;
         z-index: 1;
-        background: url('images/news/article-bg.png') center/contain no-repeat;
+        background: url(images/news/news-mobile-bg.png) center / contain no-repeat;
         background-size: 100% 100%;
         width: 900px;
         min-height: 650px;
