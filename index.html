@@ -15,6 +15,7 @@
 <link rel="preload" href="fonts/TTTricks-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="styles-mobile.css">
+<link rel="stylesheet" href="loader.css">
 <script>
     // Check age confirmation
     if (!localStorage.getItem('ageConfirmed')) {
@@ -25,6 +26,15 @@
 </head>
 <body>
 <div class="page">
+
+    <!-- ================= LOADER ================= -->
+    <div class="loader" id="loader">
+        <div class="loader__spinner"></div>
+        <div class="loader__text">Загрузка...</div>
+        <div class="loader__progress">
+            <div class="loader__progress-bar" id="loaderProgress"></div>
+        </div>
+    </div>
 
     <!-- ================= HEADER ================= -->
     <header class="header" id="home">

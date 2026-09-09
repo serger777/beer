@@ -1,7 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Hero video logic
+    // Loader logic
+    const loader = document.getElementById('loader');
+    const loaderProgress = document.getElementById('loaderProgress');
     const heroVideos = document.querySelectorAll('.hero__video');
+
+    let videosLoaded = 0;
+    const totalVideos = heroVideos.length;
+
+    const updateProgress = () => {
+        const progress = (videosLoaded / totalVideos) * 100;
+        if (loaderProgress) {
+            loaderProgress.style.width = `${progress}%`;
+        }
+
+        if (videosLoaded === totalVideos) {
+            setTimeout(() => {
+                if (loader) {
+                    loader.classList.add('loader--hidden');
+                }
+            }, 300);
+        }
+    };
+
     heroVideos.forEach(video => {
+        // Track loading progress
+        video.addEventListener('loadeddata', () => {
+            videosLoaded++;
+            updateProgress();
+        });
+
+        // Fallback if video fails to load
+        video.addEventListener('error', () => {
+            videosLoaded++;
+            updateProgress();
+        });
+
+        // Switch to loop video when open video ends
         video.addEventListener('ended', () => {
             const loopSrc = video.getAttribute('data-loop');
             if (loopSrc) {
@@ -11,6 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Fallback: hide loader after 5 seconds if videos don't load
+    setTimeout(() => {
+        if (loader && !loader.classList.contains('loader--hidden')) {
+            loader.classList.add('loader--hidden');
+        }
+    }, 5000);
 
     const header = document.querySelector('.header');
     if (!header) return;
