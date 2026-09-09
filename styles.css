@@ -1116,6 +1116,7 @@ body {
 @media (min-width: 768px) {
     .about__content {
         margin-top: 320px;
+        padding: 0 150px;
     }
 }
 
@@ -1181,6 +1182,9 @@ body {
     visibility: visible;
     pointer-events: auto;
     z-index: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
 }
 
 .about__brewers-image {
@@ -1196,6 +1200,7 @@ body {
     line-height: 1.2;
     color: #502c2c;
     margin: 0 0 16px;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -1372,6 +1377,7 @@ body {
 /* Timeline text panels (inside the "История" tab) */
 .about__timeline-text {
     display: none;
+    text-align: center;
 }
 
 .about__timeline-text--active {
@@ -1402,6 +1408,9 @@ body {
         width: 1440px;
         height: 941px;
         padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -1418,7 +1427,7 @@ body {
     position: relative;
     width: 100%;
     font-size: 36px;
-    margin-bottom: 40px;
+    margin: 70px 0 30px;
 }
 
 @media (min-width: 768px) {
@@ -2270,5 +2279,18 @@ body {
     .footer__age {
         font-size: 20px;
         width: 599px;
+    }
+}
+@media (min-width: 1440px) {
+    .news .container {
+        position: relative;
+        z-index: 1;
+        background: url('images/news/article-bg.png') center/contain no-repeat;
+        background-size: 100% 100%;
+        width: 900px;
+        min-height: 650px;
+        padding: 100px 80px 60px;
+        display: flex;
+        flex-direction: column;
     }
 }
