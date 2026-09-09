@@ -1412,6 +1412,10 @@ body {
         align-items: center;
         justify-content: center;
     }
+
+    .news__bg {
+        display: block;
+    }
 }
 
 .news__bg {
