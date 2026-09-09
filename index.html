@@ -15,6 +15,12 @@
 <link rel="preload" href="fonts/TTTricks-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="styles-mobile.css">
+<script>
+    // Check age confirmation
+    if (!localStorage.getItem('ageConfirmed')) {
+        window.location.href = 'age-gate.html';
+    }
+</script>
 <script src="script.js" defer></script>
 </head>
 <body>
@@ -76,7 +82,12 @@
 
     <!-- ================= HERO ================= -->
     <div class="hero">
-        <img src="images/header/hero-bg.png" alt="Балтика Brew" class="hero__bg">
+        <video class="hero__bg hero__video hero__video--desktop" playsinline muted autoplay data-open="video/OPEN.mp4" data-loop="video/LOOP.mp4">
+            <source src="video/OPEN.mp4" type="video/mp4">
+        </video>
+        <video class="hero__bg hero__video hero__video--mobile" playsinline muted autoplay data-open="video/FINAL 9-16_OPEN.mp4" data-loop="video/FINAL 9-16_LOOP.mp4">
+            <source src="video/FINAL 9-16_OPEN.mp4" type="video/mp4">
+        </video>
     </div>
 
     <!-- ================= PRODUCT ================= -->
@@ -634,12 +645,14 @@
                 <div class="footer__contact">
                     <span class="footer__contact-label">Свяжитесь с нами</span>
                     <div class="footer__socials">
+                        <a href="#" aria-label="Telegram"><img src="images/telegram.png" alt="Telegram" class="mobile footer__social-icon"></a>
+                        <a href="#" aria-label="Viber"><img src="images/Viber.png" alt="Viber" class="mobile footer__social-icon"></a>
                         <a href="#" aria-label="Outlook"><img src="images/outlook.png" alt="Outlook" class="footer__social-icon"></a>
                         <a href="#" aria-label="Яндекс"><img src="images/yandex.png" alt="Яндекс" class="footer__social-icon"></a>
                     </div>
                 </div>
             </div>
-
+             
             <div class="footer__bottom-row">
                 <div class="footer__links">
                     <a href="#" class="footer__link">Политика конфиденциальности</a>

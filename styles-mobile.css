@@ -124,8 +124,31 @@
        ============================================ */
     .hero {
         width: 100%;
-        height: 60vh;
-        min-height: 400px;
+        height: 100vh;
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: none;
+    }
+
+    .header {
+        width: 100%;
+        padding: 10px 20px;
+        background: transparent;
+        box-sizing: border-box;
+    }
+
+    .header--scrolled {
+        background: linear-gradient(90deg, #07153a 0%, #0d1d66 34.8%, #091a47 100%), #000000;
     }
 
     /* ============================================
@@ -169,7 +192,7 @@
         height: auto;
         display: none;
         flex-direction: column;
-        min-height: auto;
+        min-height: 100vh;
     }
 
     .product__slide--active {
@@ -180,13 +203,14 @@
         position: relative;
         width: 100%;
         height: auto;
+        min-height: 100vh;
         display: block;
         z-index: 0;
     }
 
     .product__slide > .container {
         position: absolute;
-        bottom: 40px;
+        bottom: 20px;
         left: 0;
         right: 0;
         z-index: 2;
@@ -198,7 +222,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 20px;
+        gap: 10px;
     }
 
     .product__title {
@@ -212,7 +236,7 @@
         font-size: 16px;
         line-height: 1.3;
         margin: 0;
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .product__stats {
@@ -262,7 +286,7 @@
     .product__line-kind {
         position: absolute;
         font-size: 20px;
-        top: 50%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, 10%);
         text-align: center;
@@ -273,7 +297,7 @@
     .product__line-label {
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 45%;
         transform: translate(-50%, -80%);
         font-size: 14px;
         text-align: center;
@@ -347,7 +371,7 @@
 
     .product__badges {
         position: absolute;
-        top: 40%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 90%;
@@ -393,7 +417,7 @@
         height: auto;
         min-height: 800px;
         padding: 40px 0;
-    }
+    
 
     .about__bg {
         left: 50%;
@@ -529,10 +553,11 @@
     /* ============================================
        NEWS
        ============================================ */
+    /* ============================================
+       NEWS
+       ============================================ */
     .news {
-        width: 100%;
-        height: auto;
-        padding: 40px 0;
+        display: none;
     }
 
     .news__title {
@@ -666,9 +691,7 @@
        AUTHOR
        ============================================ */
     .author {
-        width: 100%;
-        height: auto;
-        padding: 40px 0;
+        display: none;
     }
 
     .author__title {
@@ -730,7 +753,9 @@
         gap: 20px;
         align-items: flex-start;
     }
-
+    .footer__brand .footer__socials{
+        display: none;
+    }
     .footer__company-name {
         font-size: 16px;
         line-height: 1.4;
@@ -753,11 +778,12 @@
         gap: 12px;
         flex-wrap: nowrap;
         justify-content: flex-start;
+       
     }
 
     .footer__social-icon {
-        width: 50px;
-        height: 50px;
+       width: 40px;
+        height: 40px;
         flex-shrink: 0;
     }
 

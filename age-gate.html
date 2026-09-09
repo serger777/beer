@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Балтика Brew - Подтверждение возраста</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'TT Backwards Sans';
+            src: url('fonts/tt-backwardssans-regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'TT Backwards Sans', sans-serif;
+            background: linear-gradient(90deg, #07153a 0%, #0d1d66 34.8%, #091a47 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .age-gate {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .age-gate__logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 80px;
+        }
+
+        .age-gate__title {
+            font-size: 48px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .age-gate__subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .age-gate__buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .age-gate__button {
+            padding: 15px 40px;
+            font-size: 16px;
+            font-family: 'TT Backwards Sans', sans-serif;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .age-gate__button--yes {
+            background: #fdd46d;
+            color: #07153a;
+        }
+
+        .age-gate__button--yes:hover {
+            background: #ffc947;
+        }
+
+        .age-gate__button--no {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .age-gate__button--no:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .age-gate__message {
+            font-size: 16px;
+            line-height: 1.5;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .age-gate__title {
+                font-size: 32px;
+            }
+
+            .age-gate__logo {
+                width: 140px;
+                margin-bottom: 60px;
+            }
+
+            .age-gate__buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .age-gate__button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Screen 1: Age confirmation -->
+    <div class="age-gate" id="ageQuestion">
+        <img src="images/header/logo.png" alt="Балтика Brew" class="age-gate__logo">
+        <h1 class="age-gate__title">ВАМ ЕСТЬ 18 ЛЕТ?</h1>
+        <p class="age-gate__subtitle">Чтобы продолжить, подтвердите свой возраст.</p>
+        <div class="age-gate__buttons">
+            <button class="age-gate__button age-gate__button--yes" id="btnYes">Мне есть 18 лет</button>
+            <button class="age-gate__button age-gate__button--no" id="btnNo">Мне нет 18 лет</button>
+        </div>
+    </div>
+
+    <!-- Screen 2: Access denied -->
+    <div class="age-gate hidden" id="accessDenied">
+        <img src="images/header/logo.png" alt="Балтика Brew" class="age-gate__logo">
+        <h1 class="age-gate__title">САЙТ ДОСТУПЕН ТОЛЬКО<br>ДЛЯ ПОЛЬЗОВАТЕЛЕЙ 18+</h1>
+        <p class="age-gate__message">Вы сможете его посетить после достижения совершеннолетия</p>
+    </div>
+
+    <script>
+        const btnYes = document.getElementById('btnYes');
+        const btnNo = document.getElementById('btnNo');
+        const ageQuestion = document.getElementById('ageQuestion');
+        const accessDenied = document.getElementById('accessDenied');
+
+        btnYes.addEventListener('click', () => {
+            // Save confirmation and redirect to main page
+            localStorage.setItem('ageConfirmed', 'true');
+            window.location.href = 'index.html';
+        });
+
+        btnNo.addEventListener('click', () => {
+            // Show access denied screen
+            ageQuestion.classList.add('hidden');
+            accessDenied.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

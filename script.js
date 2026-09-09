@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Hero video logic
+    const heroVideos = document.querySelectorAll('.hero__video');
+    heroVideos.forEach(video => {
+        video.addEventListener('ended', () => {
+            const loopSrc = video.getAttribute('data-loop');
+            if (loopSrc) {
+                video.src = loopSrc;
+                video.loop = true;
+                video.play();
+            }
+        });
+    });
+
     const header = document.querySelector('.header');
     if (!header) return;
 

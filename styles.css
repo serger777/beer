@@ -253,6 +253,24 @@ body {
     object-fit: cover;
 }
 
+.hero__video--mobile {
+    display: block;
+}
+
+.hero__video--desktop {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .hero__video--mobile {
+        display: none;
+    }
+
+    .hero__video--desktop {
+        display: block;
+    }
+}
+
 @media (min-width: 1440px) {
     .hero__bg {
         left: 0;
@@ -2237,6 +2255,9 @@ body {
 }
 
 @media (min-width: 768px) {
+    .mobile {
+        display: none;
+    }
     .footer__age {
         font-size: 18px;
         text-align: right;
