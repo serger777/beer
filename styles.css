@@ -997,8 +997,8 @@ body {
 @media (min-width: 768px) {
     .about__card[data-pos="center"] {
         top: 180px;
-        width: 423px;
-        height: 134px;
+        width: 350px;
+        height: 110px;
     }
 }
 
