@@ -25,6 +25,15 @@
 <script src="script.js" defer></script>
 </head>
 <body>
+        <!-- ================= HERO ================= -->
+    <div class="hero">
+        <video class="hero__bg hero__video hero__video--desktop" playsinline muted autoplay preload="auto" poster="images/header/hero-bg.png" data-open="video/OPEN.mp4" data-loop="video/LOOP.mp4">
+            <source src="video/OPEN.mp4" type="video/mp4">
+        </video>
+        <video class="hero__bg hero__video hero__video--mobile" playsinline muted autoplay preload="auto" poster="images/header/hero-bg.png" data-open="video/FINAL 9-16_OPEN.mp4" data-loop="video/FINAL 9-16_LOOP.mp4">
+            <source src="video/FINAL 9-16_OPEN.mp4" type="video/mp4">
+        </video>
+    </div>
 <div class="page">
 
     <!-- ================= LOADER ================= -->
@@ -44,16 +53,13 @@
                 <nav class="header__links">
                     <a href="#assortment" class="header__link">Ассортимент</a>
                     <a href="#about" class="header__link">О нас</a>
-                    <a href="#news" class="header__link">Новости</a>
                 </nav>
 
-                <a href="#home">
+                <a class="logo_header" href="#home">
                     <img src="images/header/logo.png" alt="Логотип" class="header__logo">
                 </a>
 
                 <nav class="header__links">
-                    <a href="#faq" class="header__link">Ответы на вопросы</a>
-                    <a href="#author" class="header__link">Слово автора</a>
                     <div class="header__lang">
                         <a href="#" class="header__lang-link header__lang-link--active">RU</a>
                         <a href="#" class="header__lang-link">EN</a>
@@ -83,22 +89,9 @@
             <div class="container">
                 <a href="#assortment" class="header__mobile-link">Ассортимент</a>
                 <a href="#about" class="header__mobile-link">О нас</a>
-                <a href="#news" class="header__mobile-link">Новости</a>
-                <a href="#faq" class="header__mobile-link">Ответы на вопросы</a>
-                <a href="#author" class="header__mobile-link">Слово автора</a>
             </div>
         </nav>
     </header>
-
-    <!-- ================= HERO ================= -->
-    <div class="hero">
-        <video class="hero__bg hero__video hero__video--desktop" playsinline muted autoplay preload="auto" poster="images/header/hero-bg.png" data-open="video/OPEN.mp4" data-loop="video/LOOP.mp4">
-            <source src="video/OPEN.mp4" type="video/mp4">
-        </video>
-        <video class="hero__bg hero__video hero__video--mobile" playsinline muted autoplay preload="auto" poster="images/header/hero-bg.png" data-open="video/FINAL 9-16_OPEN.mp4" data-loop="video/FINAL 9-16_LOOP.mp4">
-            <source src="video/FINAL 9-16_OPEN.mp4" type="video/mp4">
-        </video>
-    </div>
 
     <!-- ================= PRODUCT ================= -->
     <section class="section product" id="assortment">

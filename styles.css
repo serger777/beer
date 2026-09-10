@@ -88,7 +88,7 @@ html {
 
 body {
     font-family: 'TT Backwards Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    background-color: #000;
+    background-color: #FFF6E2;
     color: #fff;
     min-width: 320px;
 }
@@ -177,7 +177,9 @@ body {
     background: transparent;
     transition: transform 0.3s ease, background 0.3s ease;
 }
-
+ .logo_header {
+    width: 280px;
+ }
 .header--hidden {
     transform: translateX(-50%) translateY(-100%);
 }
@@ -221,8 +223,7 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    max-width: 1440px;
-    height: 60vh;
+    height: 100vh;
     min-height: 400px;
     background-color: #000;
     overflow: hidden;
@@ -230,26 +231,23 @@ body {
 
 @media (min-width: 768px) {
     .hero {
-        height: 80vh;
+        height: 100vh;
     }
 }
 
 @media (min-width: 1440px) {
     .hero {
-        width: 1440px;
+        width: 100%;
         height: 100vh;
     }
 }
 
 .hero__bg {
     position: absolute;
-    top: -11px;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: calc(100% + 11px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -297,7 +295,7 @@ body {
 @media (min-width: 1440px) {
     .header__links {
         gap: 40px;
-        width: 400px;
+        width: auto;
     }
 }
 
