@@ -997,8 +997,8 @@ body {
 @media (min-width: 768px) {
     .about__card[data-pos="center"] {
         top: 180px;
-        width: 350px;
-        height: 110px;
+        width: 423px;
+        height: 134px;
     }
 }
 
@@ -2312,5 +2312,12 @@ body {
 
 /* Hide timeline */
 .about .timeline {
+    display: none !important;
+}
+
+/* Hide news, video, and author sections */
+.news,
+.video,
+.author {
     display: none !important;
 }
