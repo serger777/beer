@@ -851,7 +851,7 @@ body {
     padding: 0;
     background: none;
     cursor: pointer;
-    display: block;
+    display: none!important;
 }
 
 @media (min-width: 768px) {
@@ -2292,4 +2292,25 @@ body {
         display: flex;
         flex-direction: column;
     }
+}
+
+/* Hide breweries and breweries-list tabs */
+.about__card[data-tab="breweries"],
+.about__card[data-tab="breweries-list"] {
+    display: none !important;
+}
+
+.about__panel[data-panel="breweries"],
+.about__panel[data-panel="breweries-list"] {
+    display: none !important;
+}
+
+/* Center single history card */
+.about__card[data-tab="history"] {
+    margin: 0 auto;
+}
+
+/* Hide timeline */
+.about .timeline {
+    display: none !important;
 }

@@ -411,7 +411,7 @@
             <p class="product__line-label">Линейка</p>
             <p class="product__line-kind">регулярная</p>
             <button type="button" class="product__line-dot product__line-dot--left" aria-label="Предыдущая линейка">
-                <img src="images/product/left-arrow.png" alt="">
+                <img src="images/left-arrow.png" alt="">
             </button>
             <button type="button" class="product__line-dot product__line-dot--right" aria-label="Следующая линейка">
                 <img src="images/right-arrow.png" alt="">
@@ -423,7 +423,7 @@
             <p class="product__line-label">Линейка</p>
             <p class="product__line-kind">лимит</p>
             <button type="button" class="product__line-dot product__line-dot--left" aria-label="Предыдущая линейка">
-                <img src="images/product/left-arrow.png" alt="">
+                <img src="images/left-arrow.png" alt="">
             </button>
             <button type="button" class="product__line-dot product__line-dot--right" aria-label="Следующая линейка">
                 <img src="images/right-arrow.png" alt="">
@@ -432,7 +432,7 @@
 
         <div class="product__badges">
             <button type="button" class="product__badge-btn product__badge-btn--prev" aria-label="Предыдущий продукт">
-                <img src="images/product/left-arrow.png" alt="" class="product__badge">
+                <img src="images/left-arrow.png" alt="" class="product__badge">
             </button>
             <button type="button" class="product__badge-btn product__badge-btn--next" aria-label="Следующий продукт">
                 <img src="images/right-arrow.png" alt="" class="product__badge">
@@ -446,23 +446,15 @@
 
         <h2 class="about__title gold-title">О нас</h2>
 
-        <button type="button" class="about__card" data-tab="breweries" data-pos="left">
-            <p class="about__card-label">Наши пивовары</p>
-        </button>
-
-        <button type="button" class="about__card" data-tab="history" data-pos="center">
+        <button type="button" class="about__card about__card--single" data-tab="history" data-pos="center">
             <p class="about__card-label">История</p>
-        </button>
-
-        <button type="button" class="about__card" data-tab="breweries-list" data-pos="right">
-            <p class="about__card-label">Наши пивоварни</p>
         </button>
 
         <div class="about__content">
             <div class="about__panel" data-panel="breweries">
                 <div class="about__brewers">
                     <button type="button" class="about__brewers-arrow about__brewers-arrow--prev" aria-label="Предыдущий пивовар">
-                        <img src="images/product/left-arrow.png" alt="">
+                        <img src="images/left-arrow.png" alt="">
                     </button>
 
                     <div class="about__brewers-slides">
@@ -490,35 +482,16 @@
                 </div>
             </div>
             <div class="about__panel about__panel--active" data-panel="history">
-                <h3 class="about__content-title">Название пивоварни</h3>
-                <div class="about__timeline-text" data-year="dec2010">
+                <h3 class="about__content-title">История</h3>
+                <div class="about__history-content">
                     <p class="about__content-text">
-                        Здесь будет история о декабре 2010 года — важной точке в развитии пивоварни.
+                        В нашей пивоваренной лаборатории многолетний опыт соединяется с технологическим прогрессом и щепоткой пивоваренного волшебства. При помощи магических машин мы довели рецептурные формулы до совершенства. Так, в союзе мастерства и волшебства рождается вкус Балтики Brew.
                     </p>
-                </div>
-                <div class="about__timeline-text" data-year="may2011">
                     <p class="about__content-text">
-                        Здесь будет история о мае 2011 года — новом этапе развития пивоварни.
+                        Это магия пива.
                     </p>
-                </div>
-                <div class="about__timeline-text" data-year="jun2011">
                     <p class="about__content-text">
-                        Здесь будет история об июне 2011 года и событиях этого периода.
-                    </p>
-                </div>
-                                <div class="about__timeline-text about__timeline-text--active" data-year="dec2011">
-                    <p class="about__content-text">
-                        В декабре 2010 года был сварен первый шоколадный стаут - Old New Year Chocolate Stout совместно с Дейвом Кларком (Tetley's) и Евгением Толстовым (Victory Art). Этот момент стал важной вехой в истории пивоварни и определил её дальнейшее развитие в направлении крафтового пива.
-                    </p>
-                </div>
-                <div class="about__timeline-text" data-year="apr2012">
-                    <p class="about__content-text">
-                        Здесь будет история об апреле 2012 года и достижениях этого периода.
-                    </p>
-                </div>
-                <div class="about__timeline-text" data-year="aug2012">
-                    <p class="about__content-text">
-                        Здесь будет история об августе 2012 года — очередной вехе пивоварни.
+                        Это Балтика Brew
                     </p>
                 </div>
             </div>
