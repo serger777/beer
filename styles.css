@@ -1212,21 +1212,22 @@ body {
 
 .about__content-text {
     font-weight: 300;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.5;
     color: #502c2c;
     margin: 0;
+    font-family: 'TT Backwards Sans', 'Inter', sans-serif;
 }
 
 @media (min-width: 768px) {
     .about__content-text {
-        font-size: 18px;
+  font-size: 24px;
     }
 }
 
 @media (min-width: 1440px) {
     .about__content-text {
-        font-size: 22px;
+    font-size: 24px;
     }
 }
 
