@@ -906,6 +906,7 @@ body {
     height: auto;
     min-height: 800px;
     padding-bottom: 60px;
+    background: url('images/about/bg.png') center/cover no-repeat;
 }
 
 @media (min-width: 768px) {
@@ -917,9 +918,9 @@ body {
 @media (min-width: 1440px) {
     .about {
         width: 1440px;
-        height: 1324px;
+        height: auto;
         min-height: 1324px;
-        padding-bottom: 0;
+        padding-bottom: 80px;
     }
 }
 
