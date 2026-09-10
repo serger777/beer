@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     if (!header) return;
 
-    const SCROLL_THRESHOLD = 40;
+    const SCROLL_THRESHOLD = 112;
     let lastScrollY = window.scrollY;
     let ticking = false;
 

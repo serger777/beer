@@ -211,7 +211,7 @@ body {
 
 @media (min-width: 1440px) {
     .header__nav-bar {
-        height: 120px;
+        height: 90px;
     }
 }
 
@@ -908,7 +908,13 @@ body {
     padding-bottom: 60px;
     background: url('images/about/bg.png') center/cover no-repeat;
 }
-
+.about_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 100px;
+}
 @media (min-width: 768px) {
     .about {
         min-height: 1000px;
@@ -946,28 +952,27 @@ body {
     width: 100%;
     font-size: 36px;
     margin-bottom: 40px;
-    padding-top: 60px;
     z-index: 1;
+    padding-top: 20px;
 }
 
 @media (min-width: 768px) {
     .about__title {
         font-size: 48px;
-        padding-top: 80px;
-        margin-bottom: 60px;
     }
 }
 
 @media (min-width: 1440px) {
     .about__title {
         font-size: 60px;
-        padding-top: 116px;
-        margin-bottom: 80px;
     }
 }
-
+.about_button_container {
+ width: 100%;
+ position: relative;
+ margin-bottom: 20px;
+}
 .about__card {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -989,16 +994,12 @@ body {
 
 .about__card[data-pos="center"] {
     opacity: 1;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 150px;
     width: 280px;
     height: 90px;
 }
 
 @media (min-width: 768px) {
     .about__card[data-pos="center"] {
-        top: 180px;
         width: 350px;
         height: 110px;
     }
@@ -1060,6 +1061,7 @@ body {
     color: #502c2c;
     margin: 0;
     white-space: nowrap;
+    font-family: 'TT Backwards Sans', 'Inter', sans-serif;
 }
 
 .about__card[data-pos="center"] .about__card-label {
@@ -1102,13 +1104,12 @@ body {
     position: relative;
     width: 100%;
     padding: 0 20px;
-    margin-top: 40px;
     z-index: 1;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
     .about__content {
-        margin-top: 60px;
         padding: 0 150px;
     }
 }
@@ -1192,6 +1193,7 @@ body {
     color: #502c2c;
     margin: 0 0 16px;
     text-align: center;
+    display: none;
 }
 
 @media (min-width: 768px) {
