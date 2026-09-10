@@ -533,7 +533,6 @@ body {
 
 .product__title {
     width: 100%;
-    max-width: 300px;
     font-family: 'TT Tricks Variable', 'Inter', sans-serif;
     font-size: 32px;
     line-height: 1;
@@ -549,7 +548,6 @@ body {
 @media (min-width: 768px) {
     .product__title {
         font-size: 42px;
-        max-width: 350px;
     }
 }
 
