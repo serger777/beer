@@ -210,7 +210,7 @@
 
     .product__slide > .container {
         position: absolute;
-        bottom: 70px;
+      bottom: 5%;
         left: 0;
         right: 0;
         z-index: 2;
@@ -873,5 +873,15 @@
         text-align: left;
         font-size: 14px;
         margin-top: 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    .product__slide > .container {
+        position: absolute;
+        bottom: 3%;
+        left: 0;
+        right: 0;
+        z-index: 2;
     }
 }
