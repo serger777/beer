@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     if (!header) return;
 
-    const SCROLL_THRESHOLD = 112;
+    const SCROLL_THRESHOLD = 160;
     let lastScrollY = window.scrollY;
     let ticking = false;
 
@@ -146,10 +146,92 @@ document.addEventListener('DOMContentLoaded', () => {
         const showSlide = (lineIndex, slideIndex) => {
             const slides = getSlidesForLine(lineIndex);
             const total = slides.length;
+            const currentActiveIndex = Array.from(slides).findIndex(s => s.classList.contains('product__slide--active'));
             const activeSlideIndex = (slideIndex + total) % total;
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('product__slide--active', i === activeSlideIndex);
-            });
+
+            if (currentActiveIndex !== -1 && currentActiveIndex !== activeSlideIndex) {
+                const currentSlide = slides[currentActiveIndex];
+                const nextSlide = slides[activeSlideIndex];
+                const currentLeft = currentSlide.querySelector('.product_left');
+                const currentRight = currentSlide.querySelector('.product_right');
+                const nextLeft = nextSlide.querySelector('.product_left');
+                const nextRight = nextSlide.querySelector('.product_right');
+
+                if (currentLeft && currentRight && nextLeft && nextRight) {
+                    // Determine navigation direction
+                    const isForward = (slideIndex - currentActiveIndex + total) % total < total / 2;
+
+                    // Disable slide transition (it has 0.4s opacity transition that conflicts)
+                    currentSlide.style.transition = 'none';
+                    nextSlide.style.transition = 'none';
+
+                    // Disable transitions temporarily for instant positioning
+                    nextLeft.style.transition = 'none';
+                    nextRight.style.transition = 'none';
+
+                    // Set initial position for next slide elements (off-screen)
+                    nextLeft.style.transform = 'translateX(-100%)';
+                    nextLeft.style.opacity = '1';
+
+                    if (isForward) {
+                        nextRight.style.transform = 'translateX(100%)';
+                    } else {
+                        nextRight.style.transform = 'translateX(-100%)';
+                    }
+                    nextRight.style.opacity = '1';
+
+                    // Activate next slide (now positioned off-screen)
+                    nextSlide.classList.add('product__slide--active');
+
+                    // Force reflow
+                    void nextSlide.offsetHeight;
+
+                    // Re-enable transitions
+                    nextLeft.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+                    nextRight.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+                    currentLeft.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+                    currentRight.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+
+                    // Start animation using requestAnimationFrame
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            // Animate current slide out
+                            currentLeft.style.transform = 'translateX(-100%)';
+                            currentLeft.style.opacity = '0';
+                            if (isForward) {
+                                currentRight.style.transform = 'translateX(-100%)';
+                            } else {
+                                currentRight.style.transform = 'translateX(100%)';
+                            }
+                            currentRight.style.opacity = '0';
+
+                            // Animate next slide in
+                            nextLeft.style.transform = 'translateX(0)';
+                            nextRight.style.transform = 'translateX(0)';
+                        });
+                    });
+
+                    // Clean up after animation completes
+                    setTimeout(() => {
+                        currentSlide.classList.remove('product__slide--active');
+                        // Reset inline styles
+                        currentSlide.style.transition = '';
+                        nextSlide.style.transition = '';
+                        currentLeft.style.transition = '';
+                        currentLeft.style.transform = '';
+                        currentLeft.style.opacity = '';
+                        currentRight.style.transition = '';
+                        currentRight.style.transform = '';
+                        currentRight.style.opacity = '';
+                    }, 1100);
+                }
+            } else {
+                // No animation needed, just toggle
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('product__slide--active', i === activeSlideIndex);
+                });
+            }
+
             return activeSlideIndex;
         };
 
