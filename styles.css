@@ -542,6 +542,7 @@ body {
 }
 
 .product_right {
+    background: url('images/product/line/fade.png') right center/cover no-repeat;
     position: absolute;
     top: 0;
     right: 0;
