@@ -13,7 +13,7 @@
 
     .container {
         width: 100%;
-        padding: 0 20px;
+        padding: 0;
     }
 
     .section {
@@ -186,6 +186,7 @@
         min-height: auto;
         overflow: hidden;
         max-height: 935px;
+        padding-bottom: 20px;
     }
 
     .product__slide {
@@ -232,9 +233,11 @@
         margin: 0 auto;
         margin-top: 170px;
     }
+
      .product_right .bottle img {
         width: 200px;
      }
+
     .product__info {
         width: 100%;
         display: flex;
@@ -242,7 +245,7 @@
         align-items: center;
         text-align: center;
         gap: 10px;
-        padding-top: 30px;
+        padding: 0 20px;
     }
 
     .product__title {
@@ -436,7 +439,13 @@
         display: none;
     }
     
-
+    .about {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 560px;
+        background: url('images/about/about-mobile-bg.jpg') center/cover no-repeat;
+    }
     .about__bg {
         left: 50%;
         transform: translateX(-50%);
@@ -479,6 +488,7 @@
     .about__content {
         position: relative;
         width: 100%;
+        padding: 0 67px;
     }
 
     .about__brewers {
@@ -801,100 +811,38 @@
     /* ============================================
        FOOTER
        ============================================ */
-    .footer {
-        width: 100%;
-        padding: 30px 0 40px;
+    .footer__content {
+        padding: 30px 20px;
+        gap: 25px;
     }
 
-    .footer__partners {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px 0;
-        margin-bottom: 30px;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .footer__partner-logo {
-        height: 32px;
-        width: auto;
-    }
-
-    .footer__row {
+    .footer__top {
         flex-direction: column;
-        gap: 30px;
         align-items: flex-start;
+        gap: 25px;
     }
 
-    .footer__brand {
-        width: 100%;
+    .footer__contact-info {
         flex-direction: column;
         gap: 20px;
-        align-items: flex-start;
-    }
-    .footer__brand .footer__socials{
-        display: none;
-    }
-    .footer__company-name {
-        font-size: 16px;
-        line-height: 1.4;
-    }
-
-    .footer__contact {
         width: 100%;
+    }
+
+    .footer__phone-number {
+        font-size: 28px;
+        line-height: 33.6px;
+    }
+
+    .footer__phone-subtitle {
+        font-size: 12px;
+    }
+
+    .footer__bottom {
         flex-direction: column;
-        gap: 20px;
         align-items: flex-start;
-    }
-
-    .footer__contact-label {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    .footer__socials {
-        display: flex;
         gap: 12px;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-       
     }
 
-    .footer__social-icon {
-       width: 40px;
-        height: 40px;
-        flex-shrink: 0;
-    }
-
-    .footer__bottom-row {
-        flex-direction: column;
-        gap: 15px;
-        align-items: flex-start;
-        margin-top: 30px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .footer__links {
-        width: 100%;
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
-    }
-
-    .footer__link {
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    .footer__age {
-        width: 100%;
-        text-align: left;
-        font-size: 14px;
-        margin-top: 10px;
-    }
-}
 
 @media (max-width: 420px) {
     .product__slide > .container {
@@ -904,4 +852,5 @@
         right: 0;
         z-index: 2;
     }
+ }
 }

@@ -1,0 +1,94 @@
+/* Desktop coordinates and transitions: Figma 312:8732 → 312:8852.
+   Supply licensed web fonts with @font-face to replace the fallbacks below. */
+.brew-block {
+  --brew-paper: #fff6e2;
+  --brew-ink: #502c2c;
+  --brew-title-font: "TT Tricks Variable", "TT Tricks", Georgia, serif;
+  --brew-body-font: "TT Backwards Sans", "Arial Narrow", "Liberation Sans Narrow", sans-serif;
+  --brew-duration: 1500ms;
+  --brew-easing: cubic-bezier(.42, 0, .58, 1);
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  aspect-ratio: 1440 / 800;
+  background: var(--brew-paper);
+  color: var(--brew-ink);
+  overflow: hidden;
+  isolation: isolate;
+  touch-action: pan-y;
+}
+.brew-block *, .brew-block *::before, .brew-block *::after { box-sizing: border-box; }
+.brew-block img { display: block; max-width: none; pointer-events: none; user-select: none; }
+.brew-block:focus-visible { outline: 2px solid #0d1d66; outline-offset: -3px; }
+.brew-block__stage { position: absolute; inset: 0 auto auto 0; width: 1440px; height: 800px; transform: scale(var(--brew-scale, 1)); transform-origin: 0 0; }
+.brew-block__art, .brew-block__scene { position: absolute; inset: 0; width: 1440px; height: 800px; }
+.brew-block__track { position: absolute; left: 440px; top: -100px; display: flex; width: 3260px; height: 1000px; }
+.brew-block__background { position: relative; flex: 0 0 1200px; height: 1000px; overflow: hidden; background: white; }
+.brew-block__background--aero > img { position: absolute; width: 2368px; height: 1061px; left: -675px; top: -35px; }
+.brew-block__fade { position: absolute; inset: 0; background: linear-gradient(90deg, var(--brew-paper), transparent 160px, transparent calc(100% - 160px), var(--brew-paper)), linear-gradient(180deg, var(--brew-paper), transparent 200px, transparent 800px, var(--brew-paper)); }
+.brew-block__background--aero::after { content: ""; position: absolute; inset: 800px 0 0; background: linear-gradient(0deg, var(--brew-paper), transparent), linear-gradient(0deg, var(--brew-paper), transparent); }
+.brew-block__cidre-crop { position: absolute; width: 2117px; height: 1015px; left: -516px; top: 0; overflow: hidden; }
+.brew-block__cidre-crop img { position: absolute; width: 118.9%; height: 119.07%; left: -10.01%; top: .02%; }
+.brew-block__bridge { position: relative; flex: 0 0 860px; height: 1000px; overflow: hidden; }
+.brew-block__bridge img { position: absolute; left: -134px; top: -61px; width: 1212px; height: 1117px; }
+.brew-block__bridge::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--brew-paper), transparent 208px, transparent 712px, var(--brew-paper)), linear-gradient(90deg, var(--brew-paper), transparent 208px, transparent 712px, var(--brew-paper)); }
+.brew-block__bottle { position: absolute; left: 880px; top: 60px; width: 400px; height: 740px; overflow: hidden; }
+.brew-block__bottle-crop { position: absolute; left: 30px; top: 0; width: 326.616px; height: 734.17px; overflow: hidden; }
+.brew-block__bottle--aero img { position: absolute; width: 335.49%; height: 100%; left: -113.4%; top: -2.09%; }
+.brew-block__bottle--cidre img { position: absolute; width: 107.02%; height: 100%; left: -2.27%; top: 0; }
+.brew-block__bottle--cidre { transform: translateX(2500px); opacity: 0; }
+.brew-block__left { position: absolute; left: 0; top: -100px; width: 600px; height: 1000px; }
+.brew-block__left::after { content: ""; position: absolute; left: 440px; top: 0; width: 160px; height: 100%; background: linear-gradient(90deg, var(--brew-paper) 3.846%, transparent); }
+.brew-block__marble { position: relative; width: 440px; height: 1000px; overflow: hidden; background: white; }
+.brew-block__marble-image { position: absolute; left: -19px; top: -61px; width: 2368px; height: 1061px; }
+.brew-block__left-cloud { position: absolute; left: -299px; top: 750px; width: 777.495px; height: 326.414px; border-radius: 179px; transform: rotate(-7.58deg); }
+.brew-block__marble::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--brew-paper), transparent 160px), linear-gradient(90deg, transparent 280px, var(--brew-paper)), linear-gradient(90deg, transparent 240px, #ede7da); }
+.brew-block__cloud { position: absolute; width: 700px; height: 300px; overflow: hidden; pointer-events: none; }
+.brew-block__cloud--top { left: 340px; top: -140px; }
+.brew-block__cloud--bottom { left: 1040px; top: 600px; }
+.brew-block__cloud img { position: absolute; left: -25px; top: 31.4px; width: 707.542px; height: 297.046px; border-radius: 179px; transform: rotate(-7.58deg); }
+.brew-block__controls { position: absolute; top: 468px; left: 850px; width: 456px; display: flex; justify-content: space-between; }
+.brew-block__arrow { display: grid; place-items: center; flex: 0 0 88px; width: 88px; height: 88px; margin: 0; padding: 0; border: 0; background: transparent; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.brew-block__arrow img { width: 88px; height: 88px; transition: transform 100ms ease-out; }
+.brew-block__arrow--prev { rotate: 180deg; }
+.brew-block__arrow[aria-disabled="true"] { cursor: default; }
+@media (hover: hover) { .brew-block__arrow:not([aria-disabled="true"]):hover img { transform: scale(1.085, 1.10); } }
+.brew-block__arrow:focus-visible { outline: 3px solid #0d1d66; outline-offset: 5px; border-radius: 50%; }
+.brew-block__copy { position: absolute; top: 178px; left: 100px; width: 400px; }
+.brew-block__slide { position: absolute; top: 0; left: 0; width: 400px; }
+.brew-block__title { margin: 0 0 20px; font: 500 50px/1 var(--brew-title-font); text-transform: uppercase; color: #0d1d66; letter-spacing: -.9px; }
+.brew-block__description { width: 380px; margin: 0; font: 400 22px/1.2 var(--brew-body-font); }
+.brew-block__specs { display: flex; align-items: start; gap: 40px; margin: 32px 0 0; font-family: var(--brew-body-font); }
+.brew-block__specs > div { display: flex; flex-direction: column; align-items: center; }
+.brew-block__specs dd { order: -1; margin: 0; font-size: 40px; line-height: 1.2; white-space: nowrap; }
+.brew-block__specs dt { margin: 0; font-size: 24px; line-height: 1.4; color: rgb(80 44 44 / .7); }
+.brew-block__slide--cidre { transform: translateX(-1600px); opacity: 0; pointer-events: none; }
+.brew-block__track, .brew-block__bottle, .brew-block__slide { transition: transform var(--brew-duration) var(--brew-easing), opacity var(--brew-duration) var(--brew-easing); }
+.brew-block[data-slide="1"] .brew-block__track { transform: translateX(-2060px); }
+.brew-block[data-slide="1"] .brew-block__bottle--aero { transform: translateX(-2500px); opacity: 0; }
+.brew-block[data-slide="1"] .brew-block__bottle--cidre { transform: translateX(0); opacity: 1; }
+.brew-block[data-slide="1"] .brew-block__slide--aero { transform: translateX(-1600px); opacity: 0; pointer-events: none; }
+.brew-block[data-slide="1"] .brew-block__slide--cidre { transform: translateX(0); opacity: 1; pointer-events: auto; }
+.brew-block__sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 767px) {
+  .brew-block { aspect-ratio: auto; }
+  .brew-block__stage { position: relative; width: 100%; height: auto; transform: none; }
+  .brew-block__art { position: relative; width: 100%; height: calc(800px * var(--brew-mobile-scale, .5)); overflow: hidden; }
+  .brew-block__scene { left: 50%; transform: scale(var(--brew-mobile-scale, .5)) translateX(-1080px); transform-origin: 0 0; }
+  .brew-block__left { display: none; }
+  .brew-block__copy { position: relative; top: auto; left: auto; width: auto; margin: 12px 24px 40px; display: grid; }
+  .brew-block__slide { position: relative; width: 100%; grid-area: 1 / 1; }
+  .brew-block__title { font-size: clamp(30px, 7vw, 44px); line-height: 1.05; letter-spacing: -.5px; margin-bottom: 18px; }
+  .brew-block__description { width: 100%; max-width: 520px; font-size: 20px; line-height: 1.35; }
+  .brew-block__specs { gap: 32px; margin-top: 24px; }
+  .brew-block__specs dd { font-size: 32px; }
+  .brew-block__specs dt { font-size: 20px; }
+  .brew-block__arrow { min-width: calc(44px / var(--brew-mobile-scale, .5)); min-height: calc(44px / var(--brew-mobile-scale, .5)); }
+  .brew-block__slide--cidre { transform: translateX(-120%); }
+  .brew-block[data-slide="1"] .brew-block__slide--aero { transform: translateX(-120%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brew-block { --brew-duration: 0ms; }
+  .brew-block__arrow img { transition: none; }
+}
