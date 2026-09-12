@@ -1,0 +1,593 @@
+/* ============================================
+   PRODUCT CAROUSEL - Многослойная анимация
+   ============================================ */
+
+.product {
+    /* CSS Variables */
+    --product-paper: #fff6e2;
+    --product-ink: #502c2c;
+    --product-title-font: "TT Tricks Variable", "TT Tricks", Georgia, serif;
+    --product-body-font: "TT Backwards Sans", "Arial Narrow", sans-serif;
+    --product-duration: 1500ms;
+    --product-easing: cubic-bezier(.42, 0, .58, 1);
+    --product-scale: 1;
+    --product-offset: 2060px; /* 1200px (сцена) + 860px (мост) */
+
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    aspect-ratio: 1440 / 962;
+    margin-inline: auto;
+    background: var(--product-paper);
+    color: var(--product-ink);
+    overflow: hidden;
+    isolation: isolate;
+    touch-action: pan-y;
+}
+
+.product *,
+.product *::before,
+.product *::after {
+    box-sizing: border-box;
+}
+
+.product img {
+    display: block;
+    max-width: none;
+    pointer-events: none;
+    user-select: none;
+}
+
+.product:focus-visible {
+    outline: 2px solid #0d1d66;
+    outline-offset: -3px;
+}
+
+/* ============================================
+   STAGE & LAYOUT
+   ============================================ */
+
+.product__stage {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 1440px;
+    height: 962px;
+    transform: scale(var(--product-scale));
+    transform-origin: 0 0;
+}
+
+.product__art,
+.product__scene {
+    position: absolute;
+    inset: 0;
+    width: 1440px;
+    height: 962px;
+}
+
+/* ============================================
+   TRACK LAYER (фоны + мосты)
+   ============================================ */
+
+.product__track {
+    position: absolute;
+    left: 220px;
+    top: 0;
+    display: flex;
+    width: 10300px; /* (5 × 1200) + (4 × 860) = 9440px + запас */
+    height: 962px;
+    transition: transform var(--product-duration) var(--product-easing);
+}
+
+.product__background {
+    position: relative;
+    flex: 0 0 1200px;
+    height: 962px;
+    overflow: hidden;
+}
+
+.product__background img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product__bridge {
+    position: relative;
+    flex: 0 0 860px;
+    height: 962px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--product-paper);
+}
+
+.product__bridge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ============================================
+   BOTTLE LAYER
+   ============================================ */
+
+.product__bottle {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 740px;
+    transition: transform var(--product-duration) var(--product-easing),
+                opacity var(--product-duration) var(--product-easing);
+    pointer-events: none;
+}
+
+.product__bottle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Начальные позиции бутылок */
+.product__bottle--product1 {
+    transform: translate(-50%, -50%) translateX(0);
+    opacity: 1;
+}
+
+.product__bottle--product2 {
+    transform: translate(-50%, -50%) translateX(2500px);
+    opacity: 0;
+}
+
+.product__bottle--product3 {
+    transform: translate(-50%, -50%) translateX(5000px);
+    opacity: 0;
+}
+
+.product__bottle--product4 {
+    transform: translate(-50%, -50%) translateX(7500px);
+    opacity: 0;
+}
+
+.product__bottle--product5 {
+    transform: translate(-50%, -50%) translateX(10000px);
+    opacity: 0;
+}
+
+/* ============================================
+   COPY LAYER (текстовый контент)
+   ============================================ */
+
+.product__copy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 432px; /* ~30% от 1440px */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+    background: url(images/product/line/fade.webp) center / cover no-repeat;
+    z-index: 10;
+}
+
+.product__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 420px;
+    transition: transform var(--product-duration) var(--product-easing),
+                opacity var(--product-duration) var(--product-easing);
+}
+
+/* Начальные позиции текстовых слайдов */
+.product__slide--product1 {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.product__slide--product2,
+.product__slide--product3,
+.product__slide--product4,
+.product__slide--product5 {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Стили текста */
+.product__title {
+    margin: 0 0 24px;
+    font: 500 56px/1.1 var(--product-title-font);
+    text-transform: uppercase;
+    color: #0d1d66;
+    letter-spacing: -0.9px;
+}
+
+.product__description {
+    width: 420px;
+    margin: 0 0 32px;
+    font: 400 20px/1.3 var(--product-body-font);
+    color: var(--product-ink);
+}
+
+.product__stats {
+    display: flex;
+    align-items: start;
+    gap: 32px;
+    font-family: var(--product-body-font);
+}
+
+.product__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product__stat-value {
+    order: -1;
+    margin: 0;
+    font-size: 40px;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: var(--product-ink);
+}
+
+.product__stat-label {
+    margin: 4px 0 0;
+    font-size: 20px;
+    line-height: 1.4;
+    color: rgb(80 44 44 / 0.7);
+}
+
+/* ============================================
+   CONTROLS
+   ============================================ */
+
+.product__controls {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 20;
+}
+
+.product__arrow {
+    display: grid;
+    place-items: center;
+    flex: 0 0 88px;
+    width: 88px;
+    height: 88px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.product__arrow img {
+    width: 88px;
+    height: 88px;
+    transition: transform 100ms ease-out;
+}
+
+.product__arrow[aria-disabled="true"] {
+    cursor: default;
+    opacity: 0.4;
+}
+
+@media (hover: hover) {
+    .product__arrow:not([aria-disabled="true"]):hover img {
+        transform: scale(1.085, 1.10);
+    }
+}
+
+.product__arrow:focus-visible {
+    outline: 3px solid #0d1d66;
+    outline-offset: 5px;
+    border-radius: 50%;
+}
+
+/* ============================================
+   SLIDE STATES (data-slide атрибуты)
+   ============================================ */
+
+/* Слайд 0 */
+.product[data-slide="0"] .product__track {
+    transform: translateX(0);
+}
+
+.product[data-slide="0"] .product__bottle--product1 {
+    transform: translate(-50%, -50%) translateX(0);
+    opacity: 1;
+}
+
+.product[data-slide="0"] .product__slide--product1 {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Слайд 1 */
+.product[data-slide="1"] .product__track {
+    transform: translateX(calc(-1 * var(--product-offset)));
+}
+
+.product[data-slide="1"] .product__bottle--product1 {
+    transform: translate(-50%, -50%) translateX(-2500px);
+    opacity: 0;
+}
+
+.product[data-slide="1"] .product__bottle--product2 {
+    transform: translate(-50%, -50%) translateX(0);
+    opacity: 1;
+}
+
+.product[data-slide="1"] .product__slide--product1 {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.product[data-slide="1"] .product__slide--product2 {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Слайд 2 */
+.product[data-slide="2"] .product__track {
+    transform: translateX(calc(-2 * var(--product-offset)));
+}
+
+.product[data-slide="2"] .product__bottle--product1,
+.product[data-slide="2"] .product__bottle--product2 {
+    transform: translate(-50%, -50%) translateX(-2500px);
+    opacity: 0;
+}
+
+.product[data-slide="2"] .product__bottle--product3 {
+    transform: translate(-50%, -50%) translateX(0);
+    opacity: 1;
+}
+
+.product[data-slide="2"] .product__slide--product2 {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.product[data-slide="2"] .product__slide--product3 {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Слайд 3 */
+.product[data-slide="3"] .product__track {
+    transform: translateX(calc(-3 * var(--product-offset)));
+}
+
+.product[data-slide="3"] .product__bottle--product1,
+.product[data-slide="3"] .product__bottle--product2,
+.product[data-slide="3"] .product__bottle--product3 {
+    transform: translate(-50%, -50%) translateX(-2500px);
+    opacity: 0;
+}
+
+.product[data-slide="3"] .product__bottle--product4 {
+    transform: translate(-50%, -50%) translateX(0);
+    opacity: 1;
+}
+
+.product[data-slide="3"] .product__slide--product3 {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.product[data-slide="3"] .product__slide--product4 {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Слайд 4 */
+.product[data-slide="4"] .product__track {
+    transform: translateX(calc(-4 * var(--product-offset)));
+}
+
+.product[data-slide="4"] .product__bottle--product1,
+.product[data-slide="4"] .product__bottle--product2,
+.product[data-slide="4"] .product__bottle--product3,
+.product[data-slide="4"] .product__bottle--product4 {
+    transform: translate(-50%, -50%) translateX(-2500px);
+    opacity: 0;
+}
+
+.product[data-slide="4"] .product__bottle--product5 {
+    transform: translate(-50%, -50%) translateX(0);
+    opacity: 1;
+}
+
+.product[data-slide="4"] .product__slide--product4 {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.product[data-slide="4"] .product__slide--product5 {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.product__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .product {
+        aspect-ratio: auto;
+        min-height: 950px;
+        max-height: 950px;
+    }
+
+    .product__stage {
+        position: relative;
+        width: 100%;
+        height: auto;
+        transform: none;
+    }
+
+    .product__art {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .product__scene {
+        left: 50%;
+        transform: scale(0.5) translateX(-720px);
+        transform-origin: 0 0;
+    }
+
+    .product__track {
+        left: 220px;
+    }
+
+    .product__bottle {
+        width: 350px;
+        height: 740px;
+        top: 50%;
+        right: 26%;
+    }
+
+    .product__copy {
+        position: relative;
+        width: auto;
+        height: auto;
+        top: auto;
+        left: auto;
+        padding: 24px 20px 32px;
+        background: linear-gradient(to top, rgba(255, 246, 226, 1) 0%, rgba(255, 246, 226, 0.95) 50%, rgba(255, 246, 226, 0) 100%);
+        display: grid;
+    }
+
+    .product__slide {
+        position: relative;
+        width: 100%;
+        grid-area: 1 / 1;
+    }
+
+    .product__title {
+        font-size: clamp(32px, 7vw, 44px);
+        line-height: 1.05;
+        letter-spacing: -0.5px;
+        margin: 0 0 16px;
+        text-align: center;
+    }
+
+    .product__description {
+        width: 100%;
+        max-width: 520px;
+        font-size: 18px;
+        line-height: 1.4;
+        margin: 0 auto 24px;
+        text-align: center;
+    }
+
+    .product__stats {
+        justify-content: center;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .product__stat-value {
+        font-size: 32px;
+    }
+
+    .product__stat-label {
+        font-size: 18px;
+    }
+
+    .product__controls {
+        width: 475px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        top: 50%;
+    }
+
+    .product__arrow {
+        min-width: calc(44px / 0.5);
+        min-height: calc(44px / 0.5);
+    }
+
+    /* Мобильная анимация слайдов */
+    .product__slide--product2,
+    .product__slide--product3,
+    .product__slide--product4,
+    .product__slide--product5 {
+        transform: translateX(-120%);
+    }
+
+    .product[data-slide="1"] .product__slide--product1 {
+        transform: translateX(-120%);
+    }
+
+    .product[data-slide="2"] .product__slide--product1,
+    .product[data-slide="2"] .product__slide--product2 {
+        transform: translateX(-120%);
+    }
+
+    .product[data-slide="3"] .product__slide--product1,
+    .product[data-slide="3"] .product__slide--product2,
+    .product[data-slide="3"] .product__slide--product3 {
+        transform: translateX(-120%);
+    }
+
+    .product[data-slide="4"] .product__slide--product1,
+    .product[data-slide="4"] .product__slide--product2,
+    .product[data-slide="4"] .product__slide--product3,
+    .product[data-slide="4"] .product__slide--product4 {
+        transform: translateX(-120%);
+    }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .product {
+        --product-duration: 0ms;
+    }
+
+    .product__arrow img {
+        transition: none;
+    }
+}

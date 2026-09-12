@@ -416,7 +416,7 @@ body {
         height: 962px;
         min-height: 962px;
     }
-
+    .product__scene::before,
     .product::before {
         content: '';
         position: absolute;
@@ -425,22 +425,18 @@ body {
         width: 263px;
         height: 100%;
             background: url('images/product/fade-right.png') center/cover no-repeat;
-  
-
         pointer-events: none;
-        z-index: 1;
     }
-
+    .product__scene::after,
     .product::after {
         content: '';
-                      background: url('images/product/fade-left.png') center/cover no-repeat;
+        background: url('images/product/fade-right.png') center/cover no-repeat;
         position: absolute;
-               right: 0%;
+         right: 0%;
         top: 0;
-        width: 263px;
+        width: 118px;
         height: 100%;
         pointer-events: none;
-        z-index: 23;
     }
 }
 
@@ -596,7 +592,7 @@ body {
 
 
 .product__info {
-    padding: 80px 20px 0 20px;
+    padding: 40px 20px 0 20px;
     display: flex;
     flex-direction: column;
 }
@@ -609,7 +605,7 @@ body {
 
 @media (min-width: 1440px) {
     .product__info {
-        padding-top: 144px;
+        padding-top: 200px;
     }
 }
 
@@ -625,6 +621,7 @@ body {
     -webkit-text-fill-color: transparent;
     color: transparent;
     margin: 0 0 16px;
+    margin-top: 60px;
 }
 
 @media (min-width: 768px) {

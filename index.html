@@ -15,6 +15,7 @@
 <link rel="preload" href="fonts/TTTricks-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="styles-mobile.css">
+<link rel="stylesheet" href="product-animation.css">
 <link rel="stylesheet" href="loader.css">
 <script>
     // Check age confirmation
@@ -23,6 +24,7 @@
     }
 </script>
 <script src="script.js" defer></script>
+<script src="product-animation.js" defer></script>
 </head>
 <body>
         <!-- ================= HERO ================= -->
@@ -92,199 +94,194 @@
             </div>
         </nav>
     </header>
-
     <!-- ================= PRODUCT ================= -->
-    <section class="section product" id="assortment">
-        <div class="product__lines">
-            <div class="product__line-group product__line-group--active" data-line="1">
-                <div class="product__slides">
-                    <div class="product__slide product__slide--active" data-slide="1">
-                        <div class="product_left">  
-                            <div class="container">
-                                <div class="product__info">
-                                    <h1 class="product__title">АНТИ-ЛАГЕР КЁЛЬШ</h1>
-                                    <p class="product__description">
-                                        Кёльш – гибридный стиль: светлый эль с солодовым вкусом, оттенками фруктовой сладости и мягкими пшеничными полутонами, стремящийся быть похожим на лагер, оставаясь при этом элем. Одним словом: Анти-лагер.
-                                    </p>
-                                    <div class="product__stats">
-                                        <div class="product__stat product__stat--density">
-                                            <span class="product__stat-value">12,7 %</span>
-                                            <span class="product__stat-label">Плотность</span>
-                                        </div>
-                                        <div class="product__stat product__stat--ibu">
-                                            <span class="product__stat-value">23</span>
-                                            <span class="product__stat-label">IBU</span>
-                                        </div>
-                                        <div class="product__stat product__stat--alcohol">
-                                            <span class="product__stat-value">5,3 %</span>
-                                            <span class="product__stat-label">Алкоголь</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+    <section class="section product" id="assortment" data-product-carousel data-slide="0">
+        <div class="product__stage">
+            <div class="product__art">
+                <div class="product__scene">
+                    <!-- TRACK - горизонтальная лента с фонами и мостами -->
+                    <div class="product__track">
+                        <!-- Продукт 1: Анти-лагер -->
+                        <div class="product__background product__background--product1">
+                            <img src="images/product/line/amti-lager-1-bg.webp" alt="" draggable="false">
                         </div>
-                        <div class="product_right" style="background: url('images/product/line/amti-lager-1-bg.webp') right center/cover no-repeat;">
-                            
-                            <div class="bottle">
-                                <picture>
-                                    <img src="images/product/line/anti-lager-1.png" alt="ТЕХНО IPA" class="product__bg">
-                                </picture>
-                            </div>
-                        </div>    
+
+                        <div class="product__bridge">
+                            <img src="images/product/bridge.png" alt="" draggable="false">
+                        </div>
+
+                        <!-- Продукт 2: Техно IPA -->
+                        <div class="product__background product__background--product2">
+                            <img src="images/product/line/lgaer-bg.webp" alt="" draggable="false">
+                        </div>
+
+                        <div class="product__bridge">
+                            <img src="images/product/bridge.png" alt="" draggable="false">
+                        </div>
+
+                        <!-- Продукт 3: Заводной крик -->
+                        <div class="product__background product__background--product3">
+                            <img src="images/product/line/kriek-bg.webp" alt="" draggable="false">
+                        </div>
+
+                        <div class="product__bridge">
+                            <img src="images/product/bridge.png" alt="" draggable="false">
+                        </div>
+
+                        <!-- Продукт 4: Аэронавт -->
+                        <div class="product__background product__background--product4">
+                            <img src="images/product/line/aero-bg.webp" alt="" draggable="false">
+                        </div>
+
+                        <div class="product__bridge">
+                            <img src="images/product/bridge.png" alt="" draggable="false">
+                        </div>
+
+                        <!-- Продукт 5: Анти-лагер (повтор) -->
+                        <div class="product__background product__background--product5">
+                            <img src="images/product/line/amti-lager-1-bg.webp" alt="" draggable="false">
+                        </div>
                     </div>
 
-                    <div class="product__slide" data-slide="2">
-                        <div class="product_left">
-                            <div class="container">
-                                <div class="product__info">
-                                    <h1 class="product__title">ТЕХНО IPA</h1>
-                                    <p class="product__description">
-                                        В этом IPA мы соединили индустриальные традиции викторианской эпохи с триумфом современных хмелевых технологий.
+                    <!-- BOTTLES - отдельный слой -->
+                    <div class="product__bottle product__bottle--product1">
+                        <img src="images/product/line/anti-lager-1.png" alt="Анти-лагер Кёльш" draggable="false">
+                    </div>
+                    <div class="product__bottle product__bottle--product2" aria-hidden="true">
+                        <img src="images/product/line/techno-ipa-bottle.png" alt="Техно IPA" draggable="false">
+                    </div>
+                    <div class="product__bottle product__bottle--product3" aria-hidden="true">
+                        <img src="images/product/line/kriek-bottle.png" alt="Заводной крик" draggable="false">
+                    </div>
+                    <div class="product__bottle product__bottle--product4" aria-hidden="true">
+                        <img src="images/product/line/aero-bottle.png" alt="Аэронавт Бланш" draggable="false">
+                    </div>
+                    <div class="product__bottle product__bottle--product5" aria-hidden="true">
+                        <img src="images/product/line/anti-lager-1.png" alt="Анти-лагер Кёльш" draggable="false">
+                    </div>
 
-Хмелевая горечь ощущается легкими электрическими покалываниями на языке. Яркий хвойно-цитрусовый аромат словно разряд пробуждает ваши рецепторы.
-                                    </p>
-                                    <div class="product__stats">
-                                        <div class="product__stat product__stat--density">
-                                            <span class="product__stat-value">12,7 %</span>
-                                            <span class="product__stat-label">Плотность</span>
-                                        </div>
-                                        <div class="product__stat product__stat--ibu">
-                                            <span class="product__stat-value">23</span>
-                                            <span class="product__stat-label">IBU</span>
-                                        </div>
-                                        <div class="product__stat product__stat--alcohol">
-                                            <span class="product__stat-value">5,3 %</span>
-                                            <span class="product__stat-label">Алкоголь</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product_right" style="background: url('images/product/line/lgaer-bg.webp') right center/cover no-repeat;">
-                            <div class="bottle">
-                                <picture>
-                                    <img src="images/product/line/techno-ipa-bottle.png" alt="ТЕХНО IPA" class="product__bg" loading="lazy">
-                                </picture>
-                            </div>
-                        </div>
-                    </div>
-                      <div class="product__slide" data-slide="3">
-                        <div class="product_left">
-                            <div class="container">
-                                <div class="product__info">
-                                    <h1 class="product__title">ЗАВОДНОЙ КРИК</h1>
-                                    <p class="product__description">
-Настоящая магия начинается, когда мы добавляем в наш ламбик натуральный сок вишни. Кислые, сладкие и терпкие ноты этого рубинового эля идеально гармонизируют друга друга, образуя эталонную формулу стиля. Никакого сахара — лишь щепотка волшебства.
-                                    </p>
-                                    <div class="product__stats">
-                                        <div class="product__stat product__stat--density">
-                                            <span class="product__stat-value">12,7 %</span>
-                                            <span class="product__stat-label">Плотность</span>
-                                        </div>
-                                        <div class="product__stat product__stat--ibu">
-                                            <span class="product__stat-value">23</span>
-                                            <span class="product__stat-label">IBU</span>
-                                        </div>
-                                        <div class="product__stat product__stat--alcohol">
-                                            <span class="product__stat-value">5,3 %</span>
-                                            <span class="product__stat-label">Алкоголь</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product_right" style="background: url('images/product/line/kriek-bg.webp') right center/cover no-repeat;">
-                            <div class="bottle">
-                                <picture>
-                                    <img src="images/product/line/kriek-bottle.png" alt="ТЕХНО IPA" class="product__bg">
-                                </picture>
-                            </div>
-                        </div>
-                    </div>
-                       <div class="product__slide" data-slide="4">
-                        <div class="product_left">
-                            <div class="container">
-                                <div class="product__info">
-                                    <h1 class="product__title">АЭРОНАВТ БЛАНШ</h1>
-                                    <p class="product__description">
-Попробуйте изысканный пшеничный напиток, доведённый до совершенства в нашей лаборатории. Мы взяли за основу проверенный временем подход к стилю «Бланш» и вывернули тумблер на полную мощность.Пышный, как облако, и освежающий, как дуновение цитрусово‑кориандрового вихря.
-                                    </p>
-                                    <div class="product__stats">
-                                        <div class="product__stat product__stat--density">
-                                            <span class="product__stat-value">12,7 %</span>
-                                            <span class="product__stat-label">Плотность</span>
-                                        </div>
-                                        <div class="product__stat product__stat--ibu">
-                                            <span class="product__stat-value">23</span>
-                                            <span class="product__stat-label">IBU</span>
-                                        </div>
-                                        <div class="product__stat product__stat--alcohol">
-                                            <span class="product__stat-value">5,3 %</span>
-                                            <span class="product__stat-label">Алкоголь</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                     <div class="product_right" style="background: url('images/product/line/aero-bg.webp') right center/cover no-repeat;">
-                            <div class="bottle">
-                                <picture>
-                                    <img src="images/product/line/aero-bottle.png" alt="ТЕХНО IPA" class="product__bg">
-                                </picture>
-                            </div>
-                        </div>
-                    </div>
-                       <div class="product__slide" data-slide="5">
-                        <div class="product_left">
-                            <div class="container">
-                                <div class="product__info">
-                                    <h1 class="product__title">АНТИ-ЛАГЕР КЁЛЬШ</h1>
-                                    <p class="product__description">
-Кёльш — гибридный стиль: светлый эль с солодовым вкусом, оттенками фруктовой сладости и мягкими пшеничными полутонами, стремящийся быть похожим на лагер, оставаясь при этом элем. Одним словом: Анти-лагер
-                                    </p>
-                                    <div class="product__stats">
-                                        <div class="product__stat product__stat--density">
-                                            <span class="product__stat-value">12,7 %</span>
-                                            <span class="product__stat-label">Плотность</span>
-                                        </div>
-                                        <div class="product__stat product__stat--ibu">
-                                            <span class="product__stat-value">23</span>
-                                            <span class="product__stat-label">IBU</span>
-                                        </div>
-                                        <div class="product__stat product__stat--alcohol">
-                                            <span class="product__stat-value">5,3 %</span>
-                                            <span class="product__stat-label">Алкоголь</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                       <div class="product_right" style="background: url('images/product/line/amti-lager-1-bg.webp') right center/cover no-repeat;">
-                            <div class="bottle">
-                                <picture>
-                                    <img src="images/product/line/anti-lager-1.png" alt="ТЕХНО IPA" class="product__bg">
-                                </picture>
-                            </div>
-                        </div>
+                    <!-- CONTROLS -->
+                    <div class="product__controls">
+                        <button class="product__arrow product__arrow--prev" type="button" data-prev aria-label="Предыдущий напиток" aria-disabled="true">
+                            <img src="images/left-arrow.png" alt="" draggable="false">
+                        </button>
+                        <button class="product__arrow product__arrow--next" type="button" data-next aria-label="Следующий напиток">
+                            <img src="images/right-arrow.png" alt="" draggable="false">
+                        </button>
                     </div>
                 </div>
             </div>
+
+            <!-- COPY - текстовый контент (вне stage!) -->
+            <div class="product__copy">
+                <article class="product__slide product__slide--product1 product__info" role="group" aria-label="1 из 5">
+                    <h1 class="product__title">Анти-лагер<br>Кёльш</h1>
+                    <p class="product__description">
+                        Кёльш – гибридный стиль: светлый эль с солодовым вкусом, оттенками фруктовой сладости и мягкими пшеничными полутонами, стремящийся быть похожим на лагер, оставаясь при этом элем. Одним словом: Анти-лагер.
+                    </p>
+                    <div class="product__stats">
+                        <div class="product__stat">
+                            <span class="product__stat-value">12,7 %</span>
+                            <span class="product__stat-label">Плотность</span>
+                        </div>
+                        <div class="product__stat">
+                            <span class="product__stat-value">23</span>
+                            <span class="product__stat-label">IBU</span>
+                        </div>
+                        <div class="product__stat">
+                            <span class="product__stat-value">5,3 %</span>
+                            <span class="product__stat-label">Алкоголь</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product__slide product__slide--product2 product__info" role="group" aria-label="2 из 5" aria-hidden="true" inert>
+                    <h1 class="product__title">Техно<br>IPA</h1>
+                    <p class="product__description">
+                        В этом IPA мы соединили индустриальные традиции викторианской эпохи с триумфом современных хмелевых технологий. Хмелевая горечь ощущается легкими электрическими покалываниями на языке. Яркий хвойно-цитрусовый аромат словно разряд пробуждает ваши рецепторы.
+                    </p>
+                    <div class="product__stats">
+                        <div class="product__stat">
+                            <span class="product__stat-value">12,7 %</span>
+                            <span class="product__stat-label">Плотность</span>
+                        </div>
+                        <div class="product__stat">
+                            <span class="product__stat-value">23</span>
+                            <span class="product__stat-label">IBU</span>
+                        </div>
+                        <div class="product__stat">
+                            <span class="product__stat-value">5,3 %</span>
+                            <span class="product__stat-label">Алкоголь</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product__slide product__slide--product3 product__info" role="group" aria-label="3 из 5" aria-hidden="true" inert>
+                    <h1 class="product__title">Заводной<br>Крик</h1>
+                    <p class="product__description">
+                        Настоящая магия начинается, когда мы добавляем в наш ламбик натуральный сок вишни. Кислые, сладкие и терпкие ноты этого рубинового эля идеально гармонизируют друга друга, образуя эталонную формулу стиля. Никакого сахара — лишь щепотка волшебства.
+                    </p>
+                    <div class="product__stats">
+                        <div class="product__stat">
+                            <span class="product__stat-value">12,7 %</span>
+                            <span class="product__stat-label">Плотность</span>
+                        </div>
+                        <div class="product__stat">
+                            <span class="product__stat-value">23</span>
+                            <span class="product__stat-label">IBU</span>
+                        </div>
+                        <div class="product__stat">
+                            <span class="product__stat-value">5,3 %</span>
+                            <span class="product__stat-label">Алкоголь</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product__slide product__slide--product4 product__info" role="group" aria-label="4 из 5" aria-hidden="true" inert>
+                    <h1 class="product__title">Аэронавт<br>Бланш</h1>
+                    <p class="product__description">
+                        Попробуйте изысканный пшеничный напиток, доведённый до совершенства в нашей лаборатории. Мы взяли за основу проверенный временем подход к стилю «Бланш» и вывернули тумблер на полную мощность. Пышный, как облако, и освежающий, как дуновение цитрусово‑кориандрового вихря.
+                    </p>
+                    <div class="product__stats">
+                        <div class="product__stat">
+                            <span class="product__stat-value">12,7 %</span>
+                            <span class="product__stat-label">Плотность</span>
+                        </div>
+                        <div class="product__stat">
+                            <span class="product__stat-value">23</span>
+                            <span class="product__stat-label">IBU</span>
+                        </div>
+                        <div class="product__stat">
+                            <span class="product__stat-value">5,3 %</span>
+                            <span class="product__stat-label">Алкоголь</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product__slide product__slide--product5 product__info" role="group" aria-label="5 из 5" aria-hidden="true" inert>
+                    <h1 class="product__title">Анти-лагер<br>Кёльш</h1>
+                    <p class="product__description">
+                        Кёльш — гибридный стиль: светлый эль с солодовым вкусом, оттенками фруктовой сладости и мягкими пшеничными полутонами, стремящийся быть похожим на лагер, оставаясь при этом элем. Одним словом: Анти-лагер
+                    </p>
+                    <div class="product__stats">
+                        <div class="product__stat">
+                            <span class="product__stat-value">12,7 %</span>
+                            <span class="product__stat-label">Плотность</span>
+                        </div>
+                        <div class="product__stat">
+                            <span class="product__stat-value">23</span>
+                            <span class="product__stat-label">IBU</span>
+                        </div>
+                        <div class="product__stat">
+                            <span class="product__stat-value">5,3 %</span>
+                            <span class="product__stat-label">Алкоголь</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
 
-        <div class="product__line-badge product__line-badge--active" data-line-badge="1">
-            <img src="images/background-line.png" alt="Линейка" class="product__line-badge-img">
-            <p class="product__line-label">Линейка</p>
-            <p class="product__line-kind">регулярная</p>
-        </div>
-
-        <div class="product__badges">
-            <button type="button" class="product__badge-btn product__badge-btn--prev" aria-label="Предыдущий продукт">
-                <img src="images/left-arrow.png" alt="" class="product__badge">
-            </button>
-            <button type="button" class="product__badge-btn product__badge-btn--next" aria-label="Следующий продукт">
-                <img src="images/right-arrow.png" alt="" class="product__badge">
-            </button>
-        </div>
+        <p class="product__sr-only" data-status role="status" aria-live="polite" aria-atomic="true"></p>
     </section>
 
     <!-- ================= ABOUT / HISTORY ================= -->
@@ -491,6 +488,6 @@
     });
 })();
 </script>
-
+<script src="product-animation.js"></script>
 </body>
 </html>
