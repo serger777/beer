@@ -162,14 +162,10 @@
    ============================================ */
 
 .product__copy {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 432px; /* ~30% от 1440px */
-    height: 100%;
+    position: relative;
     display: flex;
-    align-items: center;
-    padding-left: 100px;
+    height: 100%;
+    width: 432px;
     background: url(images/product/line/fade.webp) center / cover no-repeat;
     z-index: 10;
 }
@@ -179,6 +175,7 @@
     top: 0;
     left: 0;
     width: 420px;
+    visibility: visible;
     transition: transform var(--product-duration) var(--product-easing),
                 opacity var(--product-duration) var(--product-easing);
 }
@@ -193,7 +190,7 @@
 .product__slide--product3,
 .product__slide--product4,
 .product__slide--product5 {
-    transform: translateX(-100%);
+    transform: translateX(-1600px);
     opacity: 0;
     pointer-events: none;
 }
@@ -330,7 +327,7 @@
 }
 
 .product[data-slide="1"] .product__slide--product1 {
-    transform: translateX(-100%);
+    transform: translateX(-1600px);
     opacity: 0;
     pointer-events: none;
 }
@@ -357,8 +354,9 @@
     opacity: 1;
 }
 
+.product[data-slide="2"] .product__slide--product1,
 .product[data-slide="2"] .product__slide--product2 {
-    transform: translateX(-100%);
+    transform: translateX(-1600px);
     opacity: 0;
     pointer-events: none;
 }
@@ -386,8 +384,10 @@
     opacity: 1;
 }
 
+.product[data-slide="3"] .product__slide--product1,
+.product[data-slide="3"] .product__slide--product2,
 .product[data-slide="3"] .product__slide--product3 {
-    transform: translateX(-100%);
+    transform: translateX(-1600px);
     opacity: 0;
     pointer-events: none;
 }
@@ -416,8 +416,11 @@
     opacity: 1;
 }
 
+.product[data-slide="4"] .product__slide--product1,
+.product[data-slide="4"] .product__slide--product2,
+.product[data-slide="4"] .product__slide--product3,
 .product[data-slide="4"] .product__slide--product4 {
-    transform: translateX(-100%);
+    transform: translateX(-1600px);
     opacity: 0;
     pointer-events: none;
 }
@@ -451,8 +454,8 @@
 @media (max-width: 768px) {
     .product {
         aspect-ratio: auto;
-        min-height: 950px;
-        max-height: 950px;
+        min-height: 840px;
+        max-height: 840px;
     }
 
     .product__stage {

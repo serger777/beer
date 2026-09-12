@@ -195,7 +195,6 @@
         height: auto;
         display: none;
         flex-direction: column;
-        min-height: 100vh;
     }
 
     .product__slide--active {
